@@ -1,0 +1,46 @@
+﻿@model IEnumerable<coreOnlineApparelStoreUserPanel1.Models.Products>
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Online Apparel Store</h1>
+            <p class="lead text-muted">
+                Online shopping is a form of electronic commerce which allows consumer to directly buy products or services from a seller over the Internet using a web browser.
+            </p>
+            <p>
+                <a href="#" class="btn btn-primary my-2">Explore The Page</a>
+                <a href="#" class="btn btn-secondary my-2">Contact Us</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="@item.ProductImage" class="bd-placeholder-img card-img-top" width="100" heignt="200" />
+                            <div class="card-body">
+                                <p class="card-text" style="font-weight:bold;">@item.ProductName</p>
+                                <p class="card-text">@item.ProductDescription</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a asp-controller="Cart" asp-action="Details" asp-route-id="@item.ProductId" class="btn btn-sm btn-outline-secondary">View Details</a>
+                                        <a asp-controller="Cart" asp-action="Buy" asp-route-id="@item.ProductId" class="btn btn-sm btn-outline-secondary">Add To Cart</a>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                } 
+            </div>
+        </div>
+    </div>
+
+

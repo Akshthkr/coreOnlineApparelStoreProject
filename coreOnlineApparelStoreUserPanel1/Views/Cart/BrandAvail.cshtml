@@ -1,0 +1,31 @@
+﻿@model IEnumerable<coreOnlineApparelStoreUserPanel1.Models.Brands>
+@{
+    ViewData["Title"] = "BrandAvail";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>Brand Available</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.BrandId)</th>
+            <th>@Html.DisplayNameFor(model => model.BrandName)</th>
+
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bran in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => bran.BrandId)</td>
+                <td>@Html.DisplayFor(modelItem => bran.BrandName)</td>
+
+                <td>
+
+                    <a asp-controller="Cart" asp-action="DisplayByBrand" asp-route-id="@bran.BrandId"><button type="button" class="btn btn-light">Products</button></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

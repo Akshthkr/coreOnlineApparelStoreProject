@@ -1,0 +1,1021 @@
+﻿
+@{
+    ViewData["Title"] = "OrderStatus";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>OrderStatus</h2>
+
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="msvalidate.01" content="36A28D9109C077BA3E623651FC1656F4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="fb:admins" content="19908503" />
+    <meta property="fb:app_id" content="112989545392380" />
+    <meta property="og:title" content="HTML Snippets for Twitter Boostrap framework : Bootsnipp.com" />
+    <meta property="og:type" content="website" />
+    <meta property="twitter:account_id" content="786331568" />
+    <meta property="og:url" content="https://bootsnipp.com/snippets/V14B" />
+    <meta itemprop="name" content="Bootstrap Shopping Order Status Example">
+    <meta itemprop="description" content="Bootstrap example of Shopping Order Status using HTML, Javascript, jQuery, and CSS. Snippet by AndrewEastwood">
+    <meta name="description" content="Bootstrap example of Shopping Order Status using HTML, Javascript, jQuery, and CSS. Snippet by AndrewEastwood">
+    <meta name="keywords" content="Bootstrap, css, javascript, jquery, code, example, snippet,Shopping Order Status, shop, status, ">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@bootsnipp">
+    <meta name="twitter:title" content="Shopping Order Status">
+    <meta name="twitter:description" content="High quality Bootstrap 3.1.0 Snippet by AndrewEastwood. Share yours today!">
+    <meta name="twitter:creator" content="@bootsnipp">
+    <meta name="twitter:image" content="https://d2d3qesrx8xj6s.cloudfront.net/img/screenshots/d9aa355082d84d25aebda28b5c73a28cc85d318a.jpeg ">
+    <meta property="og:image" content="https://bootsnipp.com/img/logo.jpg" />
+    <meta property="og:site_name" content="Bootsnipp.com" />
+
+    <meta property="og:description" content="Awesome Bootstrap HTML CSS JS Snippet on Bootsnipp.com." />
+    <title>Bootstrap Snippet Shopping Order Status using HTML CSS  Bootstrap  </title>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link rel="shortcut icon" href="//d2d3qesrx8xj6s.cloudfront.net/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="//d2d3qesrx8xj6s.cloudfront.net/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="//d2d3qesrx8xj6s.cloudfront.net/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="//d2d3qesrx8xj6s.cloudfront.net/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="//d2d3qesrx8xj6s.cloudfront.net/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="//d2d3qesrx8xj6s.cloudfront.net/apple-touch-icon-144x144-precomposed.png">
+    <link rel="alternate" type="application/rss+xml" title="Latest snippets from Bootsnipp.com" href="https://bootsnipp.com/feed.rss" />
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+    <!--    <link rel="stylesheet" href="//d2d3qesrx8xj6s.cloudfront.net/dist/bootsnipp.min.css?ver=872ccd9c6dce18ce6ea4d5106540f089">-->
+    <link rel="stylesheet" href="/dist/bootsnipp.min.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+    <![endif]-->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55581850-1', 'auto', {'allowLinker': true});
+  ga('require', 'linker');
+  ga('linker:autoLink', ['danstools.com','unixtimestamp.com','url-encode-decode.com','cssfontstack.com','hexcolortool.com','htaccessredirect.net','jspretty.com','jsmini.com','jsobfuscate.com','md5hashgenerator.com','regextester.com','cleancss.com','favicon-generator.org','website-performance.org','permissions-calculator.org','conversoes.org','convertissez.fr','convertitore.net','elconvertidor.com','files-conversion.com','henkan-muryo.com','konvertirung.org','konvertor.org','tahwil.net','zhuan-huan.com','bootsnipp.com'] );
+  ga('send', 'pageview');
+
+        window.onload = function() {
+/*        $('body').append('<script type="text/javascript" src="https://srv.buysellads.com/ads/CVADLKQJ.json?callback=drop_ad" async><\/script>');
+        $('body').append("<style>.bsa-apiads {\
+  line-height: 1.5;\
+  display: inline-block;\
+  float: left;\
+  font-size: 12px;\
+  background-color: #5A8DB6;\
+  border: solid 1px #337799;\
+  box-shadow: inset 0 1px hsla(0, 0%, 100%, .1);\
+  box-sizing: border-box;\
+  background-image: url('http://www.danstools.com/devops/img/devoops_pattern_b10.png');\
+  margin: 1em 1em 0 2em;\
+  border-radius: 4px;\
+  text-align: center;\
+  padding: .25em;\
+}\
+ \
+.bsa-apiads a:before {\
+  margin-right: 4px;\
+  padding: 2px 6px;\
+  border-radius: 3px;\
+  background-color: #58B668;\
+  color: #fff;\
+  content: 'Ad';\
+}\
+ \
+  .bsa-apiads a {\
+    color: #fff;\
+  }\
+ \
+  .bsa-apiads a:hover {\
+    color: inherit;\
+  }</style>");*/
+        setTimeout(function() {
+          var ad = document.querySelector(".bsap_ac1f95c148ce6148393fd34e69a52240");
+          var promos = document.querySelectorAll(".tpgr2");
+	  var isblock = 0;
+          for (var i = 0; i < promos.length; i++) {
+                  var promo = promos[i];
+          if (isblock ==1 || (ad && ad.innerHTML.replace(/\s/g, "").length == 0)) {
+	    isblock = 1;
+//            ad.style.cssText = 'display:block !important';
+//          promo.style.cssText = 'display:none !important';
+            promo.innerHTML = '';
+	    promo.style.display= 'inline-block';
+	    promo.style.visibility= 'visible';
+            promo.style.maxWidth= '';
+          } else if (promo) {
+            promo.innerHTML = '';
+//            var promotwo = document.querySelector("#toppromo2");
+            promo.childNodes[0].childNodes[0].style.width= '';
+          }
+	  }
+        }, 1000);
+      };
+
+    </script>
+    <script type="text/javascript">
+    var fb_param = {};
+    fb_param.pixel_id = '6007046190250';
+    fb_param.value = '0.00';
+    (function(){
+      var fpw = document.createElement('script');
+      fpw.async = true;
+      fpw.src = '//connect.facebook.net/en_US/fp.js';
+      var ref = document.getElementsByTagName('script')[0];
+      ref.parentNode.insertBefore(fpw, ref);
+    })();
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6007046190250&amp;value=0" /></noscript>
+</head>
+<body>
+    <!-- BuySellAds Ad Code -->
+    <script type="text/javascript">
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = '//s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+    </script>
+    <!-- End BuySellAds Ad Code -->
+
+    <nav class="navbar navbar-fixed-top navbar-bootsnipp animate" role="navigation" style="z-index: 9999999">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="animbrand">
+                    <a class="navbar-brand animate" href="https://bootsnipp.com">Bootsnipp</a>
+                </div>
+            </div>
+            <!--<script src="/js/BSAcpc.js" async></script>
+            <div class="bsa-apiads hidden-sm hidden-xs"></div>
+            -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <a href="#" class="dropdown-toggle " data-toggle="dropdown">
+                            Bootstrap <span class="caret"></span>
+                            <span style="font-size:.5em; position:absolute; top:3px; left:2px">For</span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="dropdown-header">CSS Frameworks</li>
+                            <li class="active"><a href="/" class="">Bootstrap</a></li>
+                            <li class=""><a href="/foundation" class="">Foundation</a></li>
+                            <li class=""><a href="/semanticui" class="">Semantic UI</a></li>
+                            <li class=""><a href="/materialize" class="">Materialize</a></li>
+                            <li class=""><a href="/purecss" class="">Pure</a></li>
+                            <li class=""><a href="/bulma" class="">Bulma</a></li>
+                            <li class="dropdown-header">References</li>
+                            <li class=""><a href="/cssref" class="">CSS Reference</a></li>
+                            <!--            <li class=""><a href="/bootstrapref" class="">Bootstrap Reference</a></li>-->
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <form action="https://bootsnipp.com/search" method="GET" role="search">
+                            <input style="width:100%;margin-top:10px;" type="text" class="input-sm form-control" name="q" placeholder="Search for snippets">
+                        </form>
+                    </li>
+                    <!--        <li class=""><a href="https://bootsnipp.com/about" class="animate">About</a></li>-->
+                    <!--        <li><a href="https://bootsnipp.com/user/snippets/new" class="">+New</a></li>-->
+
+                    <li>
+                        <a href="#" class="" data-toggle="dropdown">Templates <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class=""><a target="_new" href="https://colorlib.com/wp/templates/" class="">Free Templates <span class="pull-right glyphicon glyphicon-edit"></span></a></li>
+                            <li class=""><a target="_new" href="https://demo.virtuemarttemplates.net" class="">VirtueMart <span class="pull-right glyphicon glyphicon-edit"></span></a></li>
+                            <li class=""><a target="_new" href="https://demo.energizethemes.com" class="">Joomla <span class="pull-right glyphicon glyphicon-edit"></span></a></li>
+                            <!--            <li class=""><a target="_new" href="https://www.jotform.com/form-templates/?utm_source=bootsnipp&utm_campaign=bootsnipp" class="" rel="nofollow">Free Form Templates <span class="pull-right glyphicon glyphicon-edit"></span></a></li>
+                                        <li class=""><a target="_new" href="https://www.jotform.com/pdf-templates/?utm_source=bootsnipp&utm_campaign=bootsnipp" class="" rel="nofollow">Free PDF Templates <span class="pull-right glyphicon glyphicon-edit"></span></a></li>
+                            -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle " data-toggle="dropdown">Tools <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <!--            <li class=""><a href="https://bootsnipp.com/blog" class="animate">Blog <span class="pull-right glyphicon glyphicon-pencil"></span></a></li>
+                                        <li class=""><a href="https://bootsnipp.com/resources" class="animate">List of resources <span class="pull-right glyphicon glyphicon-align-justify"></span></a></li>
+                                        <li><a href="http://getbootstrap.com" target="_blank" class="animate">Download Bootstrap <span class="pull-right glyphicon glyphicon-cloud-download"></span></a></li>
+                                        <li class="dropdown-header">Bootstrap Templates</li>
+                                        <li class=""><a href="https://bootsnipp.com/templates" class="animate">Browse Templates <span class="pull-right glyphicon glyphicon-shopping-cart"></span></a></li>
+                                        <li class="dropdown-header">Builders</li>
+                            -->
+                            <li class=""><a href="https://bootsnipp.com/forum/bootstrap" class="">Community</a></li>
+                            <li class=""><a href="https://bootsnipp.com/builder" class="">Page Builder <span class="pull-right glyphicon glyphicon-modal-window"></span></a></li>
+                            <li class=""><a href="https://bootsnipp.com/forms" class="">Form Builder <span class="pull-right glyphicon glyphicon-tasks"></span></a></li>
+                            <li class=""><a href="https://bootsnipp.com/buttons" class="">Button Builder <span class="pull-right glyphicon glyphicon-edit"></span></a></li>
+                            <li class=""><a href="https://bootsnipp.com/iconsearch" class="">Icon Search <span class="pull-right glyphicon glyphicon-search"></span></a></li>
+                            <li class="dropdown-header">Dan's Tools</li>
+                            <li class=""><a href="http://www.cleancss.com/diff-compare-merge/" class="">Diff / Merge <span class="pull-right glyphicon glyphicon-transfer"></span></a></li>
+                            <li class=""><a href="http://www.hexcolortool.com/" class="">Color Picker <span class="pull-right glyphicon glyphicon-pencil"></span></a></li>
+                            <li class=""><a href="http://www.danstools.com/keyword-tool/" class="">Keyword Tool <span class="pull-right glyphicon glyphicon-list-alt"></span></a></li>
+                            <li class=""><a href="http://www.cssfontstack.com/Web-Fonts" class="">Web Fonts <span class="pull-right glyphicon glyphicon-font"></span></a></li>
+                            <li class=""><a href="http://www.htaccessredirect.net/" class="">.htaccess Generator <span class="pull-right glyphicon glyphicon-console"></span></a></li>
+                            <li class=""><a href="http://www.favicon-generator.org/" class="">Favicon Generator <span class="pull-right glyphicon glyphicon-picture"></span></a></li>
+                            <li class=""><a href="http://www.website-performance.org/" class="">Site Speed Test <span class="pull-right glyphicon glyphicon-dashboard"></span></a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="https://bootsnipp.com/snippets" class="dropdown-toggle " data-toggle="dropdown">Snippets <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class=""><a href="https://bootsnipp.com" class="">Featured <span class="pull-right glyphicon glyphicon-star"></span></a></li>
+                            <li class=""><a href="https://bootsnipp.com/tags" class="">Tags  <span class="pull-right glyphicon glyphicon-tags"></span></a></li>
+                            <li class="dropdown-header">By Bootstrap Version</li>
+                            <li><a href="https://bootsnipp.com/tags/4.1.1" class="">4.1.1</a></li>
+                            <li><a href="https://bootsnipp.com/tags/4.0.0" class="">4.0.0</a></li>
+                            <li><a href="https://bootsnipp.com/tags/3.3.0" class="">3.3.0</a></li>
+                            <li><a href="https://bootsnipp.com/tags/3.2.0" class="">3.2.0</a></li>
+                            <li><a href="https://bootsnipp.com/tags/3.1.0" class="">3.1.0</a></li>
+                            <li><a href="https://bootsnipp.com/tags/3.0.3" class="">3.0.3</a></li>
+                            <li><a href="https://bootsnipp.com/tags/3.0.1" class="">3.0.1</a></li>
+                            <li><a href="https://bootsnipp.com/tags/3.0.0" class="">3.0.0</a></li>
+                            <li><a href="https://bootsnipp.com/tags/2.3.2" class="">2.3.2</a></li>
+                        </ul>
+                    </li>
+
+                    <li class=""><a href="https://bootsnipp.com/register" class="">Register</a></li>
+                    <li id="nav-login-btn" class=""><a href="https://bootsnipp.com/login" class="">Login</a></li>
+
+                    <!--        <li class="hidden-xs"><a href="#toggle-search" class=""><span class="glyphicon glyphicon-search"></span></a></li>-->
+                </ul>
+            </div>
+        </div>
+        <!--  <div class="bootsnipp-search ">
+            <div class="container">
+              <form action="https://bootsnipp.com/search" method="GET" role="search">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search for snippets and hit enter">
+                  <span class="input-group-btn">
+                    <button class="btn btn-danger" type="reset"><span class="glyphicon glyphicon-remove"></span></button>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        -->
+    </nav>
+    <div class="container" style="margin-top:10px;">
+        <div class="row" itemscope="http://schema.org/Thing">
+            <div class="col-sm-12 col-md-4">
+                <div class="title-bar" style="margin-bottom:0px;">
+                    <a href="https://bootsnipp.com/AndrewEastwood" title="Bootstrap snippets by AndrewEastwood" class="avatar-sm-container pull-left"><img src="https://secure.gravatar.com/avatar/9a778b3166c927b1d8b8ace61a87d1c7?s=100&r=g&d=mm" class="img-rounded user-avatar-sm"></a>
+
+                    <h4 itemprop="name">
+                        &quot;Shopping Order Status&quot;<br>
+                        <small>Bootstrap 3.1.0 Snippet by <a href="https://bootsnipp.com/AndrewEastwood" title="Bootstrap snippets by AndrewEastwood" itemscope itemtype="http://schema.org/Person" itemprop="name">AndrewEastwood</a></small>
+                    </h4>
+                    <div class="clearfix"></div>
+                </div>
+                <div id="tags" itemprop="description" style="padding-top:0px; float:left;">
+
+                    <a href="https://bootsnipp.com/tags/3.1.0"><span class="label label-primary">3.1.0</span></a>
+                    <a href="https://bootsnipp.com/tags/shop" title="shop"><span class="label label-primary">shop</span></a>
+                    <a href="https://bootsnipp.com/tags/status" title="status"><span class="label label-primary">status</span></a>
+                </div>
+
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <div class="row" style="margin-top:10px">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                        <center>
+
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-8815422507798180"
+                                 data-ad-slot="5700240528"
+                                 data-ad-format="auto"></ins>
+                            <script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </center>
+                    </div>
+                    <!--
+                     <div class="hidden-xs hidden-sm hidden-md col-lg-4">
+                    <div class="thumbnail" style="padding-left:15px;">
+                    <h4><strong><a href="https://www.jotform.com/?utm_source=bootsnipp.com&amp;utm_campaign=bootsnipp">Free Online Form Builder</a></strong></h4>
+                    <p>Create online forms for free.<br>
+                    Try <a href="https://www.jotform.com/?utm_source=bootsnipp.com&amp;utm_campaign=bootsnipp">JotForm Form Builder</a></p>
+
+                    </div>
+                     </div>
+                    -->
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10px;margin-bottom:10px;">
+            <div class="col-md-8">
+                <div class="btn-group">
+                    <button type="button" id="show-preview" class="active btn btn-info">Preview</button>
+                    <button type="button" id="show-html" class="btn btn-info">HTML</button>
+                    <button type="button" id="show-css" class="btn btn-info">CSS</button>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-cog"></span>&nbsp;
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li><a href="https://bootsnipp.com/fullscreen/V14B" target="_blank"><span class="glyphicon glyphicon-fullscreen"></span> View Full Screen</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span class="icon-code-fork"></span> Fork
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu" style="max-height:300px;overflow-y:scroll">
+                        <li><a href="https://bootsnipp.com/fork/V14B" id="reboot" title="Copy this snippet"><span class="icon-code-fork"></span> Fork this</a></li>
+
+                    </ul>
+                </div>
+                <!--                        <a href="https://bootsnipp.com/fork/V14B" id="reboot" class="btn btn-default tip" title="Copy this snippet"><span class="glyphicon glyphicon-retweet"></span> Fork this</a>-->
+                <div id="action-bar" style="display: inline-block">
+                    <a href="#" class="btn btn-default disabled"><i class="icon-eye-open"></i> 81.4K</a>
+                    <a href="#comments" class="btn btn-default tip" title="View comments"><i class="icon-comment"></i>&nbsp</a>
+                    <a href="https://bootsnipp.com/favorites/snippet/V14B?url=snippets%2FV14B" class="btn btn-default tip" title="Please log in to favorite this snippet"><span class="glyphicon glyphicon-thumbs-up"></span> 214 Fav</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="pull-right social-sharing hidden-xs" style="padding: 0px">
+                    <a href="#" class="btn btn-primary"
+                       onclick="window.open(
+				      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://bootsnipp.com/snippets/V14B') +'&t=' + encodeURIComponent('Shopping Order Status #Bootstrap #snippet'),
+				      'facebook-share-dialog',
+				      'width=626,height=436,top='+((screen.height - 436) / 2)+',left='+((screen.width - 626)/2 ));
+				    return false;">
+                        <i class="icon-facebook"></i>
+                    </a>
+
+                    <a href="#" class="btn btn-info"
+                       onclick="window.open(
+				      'https://twitter.com/share?url='+encodeURIComponent('http://bootsnipp.com/snippets/V14B')+'&text='+encodeURIComponent('I shared a cool #snippet on @bootsnipp  :') + '&count=none/',
+				      'twitter-share-dialog',
+				      'width=626,height=436,top='+((screen.height - 436) / 2)+',left='+((screen.width - 626)/2 ));
+				    return false;">
+                        <i class="icon-twitter"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="row visible-xs">
+                <div class="col-md-12">
+                    <p>
+                        <div class="btn-group btn-group-justified">
+                            <a href="#" class="btn btn-primary"
+                               onclick="window.open(
+                                  'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://bootsnipp.com/snippets/V14B') +'&t=' + encodeURIComponent('Shopping Order Status #Bootstrap #snippet'),
+                                  'facebook-share-dialog',
+                                  'width=626,height=436,top='+((screen.height - 436) / 2)+',left='+((screen.width - 626)/2 ));
+                                return false;">
+                                <i class="icon-facebook"></i> Post to Facebook
+                            </a>
+
+                            <a href="#" class="btn btn-info"
+                               onclick="window.open(
+                                  'https://twitter.com/share?url='+encodeURIComponent('http://bootsnipp.com/snippets/V14B')+'&text='+encodeURIComponent('I shared a cool #snippet on @bootsnipp  :') + '&count=none/',
+                                  'twitter-share-dialog',
+                                  'width=626,height=436,top='+((screen.height - 436) / 2)+',left='+((screen.width - 626)/2 ));
+                                return false;">
+                                <i class="icon-twitter"></i> Tweet this
+                            </a>
+                        </div>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    </div>
+
+    <div id="playground-container" style="overflow: hidden">
+        <div id="preview-container"><iframe id="snippet-preview" class="preview-iframe" src="//s.bootsnipp.com/iframe/V14B"></iframe></div>
+        <div class="container">
+            <div class="row" itemscope="http://schema.org/Code">
+                <div class="col-lg-12" itemprop="programmingLanguage" content="html/css/js">
+
+                    <div id="editor-html" class="playground-editor" style="height:500px;" itemprop="sampleType">
+                        &lt;link href=&quot;//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; id=&quot;bootstrap-css&quot;&gt;
+                        &lt;script src=&quot;//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+                        &lt;script src=&quot;//code.jquery.com/jquery-1.11.1.min.js&quot;&gt;&lt;/script&gt;
+                        &lt;!------ Include the above in your HEAD tag ----------&gt;
+
+                        &lt;div class=&quot;row shop-tracking-status&quot;&gt;
+
+                        &lt;div class=&quot;col-md-12&quot;&gt;
+                        &lt;div class=&quot;well&quot;&gt;
+
+                        &lt;div class=&quot;form-horizontal&quot;&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label for=&quot;inputOrderTrackingID&quot; class=&quot;col-sm-2 control-label&quot;&gt;Order id&lt;/label&gt;
+                        &lt;div class=&quot;col-sm-10&quot;&gt;
+                        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;inputOrderTrackingID&quot; value=&quot;&quot; placeholder=&quot;# put your order id here&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;div class=&quot;col-sm-offset-2 col-sm-10&quot;&gt;
+                        &lt;button type=&quot;button&quot; id=&quot;shopGetOrderStatusID&quot; class=&quot;btn btn-success&quot;&gt;Get status&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;h4&gt;Your order status:&lt;/h4&gt;
+
+                        &lt;ul class=&quot;list-group&quot;&gt;
+                        &lt;li class=&quot;list-group-item&quot;&gt;
+                        &lt;span class=&quot;prefix&quot;&gt;Date created:&lt;/span&gt;
+                        &lt;span class=&quot;label label-success&quot;&gt;12.12.2013&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;list-group-item&quot;&gt;
+                        &lt;span class=&quot;prefix&quot;&gt;Last update:&lt;/span&gt;
+                        &lt;span class=&quot;label label-success&quot;&gt;12.15.2013&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;list-group-item&quot;&gt;
+                        &lt;span class=&quot;prefix&quot;&gt;Comment:&lt;/span&gt;
+                        &lt;span class=&quot;label label-success&quot;&gt;customer&#039;s comment goes here&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;list-group-item&quot;&gt;You can find out latest status of your order with the following link:&lt;/li&gt;
+                        &lt;li class=&quot;list-group-item&quot;&gt;&lt;a href=&quot;//tracking/link/goes/here&quot;&gt;//tracking/link/goes/here&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+
+                        &lt;div class=&quot;order-status&quot;&gt;
+
+                        &lt;div class=&quot;order-status-timeline&quot;&gt;
+                        &lt;!-- class names: c0 c1 c2 c3 and c4 --&gt;
+                        &lt;div class=&quot;order-status-timeline-completion c3&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;image-order-status image-order-status-new active img-circle&quot;&gt;
+                        &lt;span class=&quot;status&quot;&gt;Accepted&lt;/span&gt;
+                        &lt;div class=&quot;icon&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;image-order-status image-order-status-active active img-circle&quot;&gt;
+                        &lt;span class=&quot;status&quot;&gt;In progress&lt;/span&gt;
+                        &lt;div class=&quot;icon&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;image-order-status image-order-status-intransit active img-circle&quot;&gt;
+                        &lt;span class=&quot;status&quot;&gt;Shipped&lt;/span&gt;
+                        &lt;div class=&quot;icon&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;image-order-status image-order-status-delivered active img-circle&quot;&gt;
+                        &lt;span class=&quot;status&quot;&gt;Delivered&lt;/span&gt;
+                        &lt;div class=&quot;icon&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;image-order-status image-order-status-completed active img-circle&quot;&gt;
+                        &lt;span class=&quot;status&quot;&gt;Completed&lt;/span&gt;
+                        &lt;div class=&quot;icon&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;/div&gt;
+                    </div>
+                    <div id="editor-css" class="playground-editor" style="height:500px;" itemprop="sampleType">
+                        @import &quot;//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css&quot;;
+
+                    .shop-tracking-status .form-horizontal{margin-bottom:50px}
+                    .shop-tracking-status .order-status{margin-top:150px;position:relative;margin-bottom:150px}
+                    .shop-tracking-status .order-status-timeline{height:12px;border:1px solid #aaa;border-radius:7px;background:#eee;box-shadow:0px 0px 5px 0px #C2C2C2 inset}.shop-tracking-status .order-status-timeline .order-status-timeline-completion{height:8px;margin:1px;border-radius:7px;background:#cf7400;width:0px}
+                    .shop-tracking-status .order-status-timeline .order-status-timeline-completion.c1{width:22%}
+                    .shop-tracking-status .order-status-timeline .order-status-timeline-completion.c2{width:46%}
+                    .shop-tracking-status .order-status-timeline .order-status-timeline-completion.c3{width:70%}
+                    .shop-tracking-status .order-status-timeline .order-status-timeline-completion.c4{width:100%}
+                    .shop-tracking-status .image-order-status{border:1px solid #ddd;padding:7px;box-shadow:0px 0px 10px 0px #999;background-color:#fdfdfd;position:absolute;margin-top:-35px}.shop-tracking-status .image-order-status.disabled{filter:url(&quot;data:image/svg+xml;utf8,&lt;svg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;&gt;&lt;filter%20id=&#039;grayscale&#039;&gt;&lt;feColorMatrix%20type=&#039;matrix&#039;%20values=&#039;0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200&#039;/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale&quot;);filter:grayscale(100%);-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%);filter:gray;}
+                    .shop-tracking-status .image-order-status.active{box-shadow:0px 0px 10px 0px #cf7400}.shop-tracking-status .image-order-status.active .status{color:#cf7400;text-shadow:0px 0px 1px #777}
+                    .shop-tracking-status .image-order-status .icon{height:40px;width:40px;background-size:contain;background-position:no-repeat}
+                    .shop-tracking-status .image-order-status .status{position:absolute;text-shadow:1px 1px #eee;color:#333;transform:rotate(-30deg);-webkit-transform:rotate(-30deg);width:180px;top:-50px;left:50px}.shop-tracking-status .image-order-status .status:before{font-family:FontAwesome;content:&quot;\f053&quot;;padding-right:5px}
+                    .shop-tracking-status .image-order-status-new{left:0}.shop-tracking-status .image-order-status-new .icon{background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAA+JJREFUWIXtll+I1FUUxz/n3vv7/WZmZ/+OphuWlliQZn8f2igxyCSIRMgeFNrUDVlUCIoeit4KeujN1CxZN5HAkiCo6CUq0NRU1KUgoqhlFcvd1f0z7Tgzv9+9PfyG2dl1Vpsa8KH9wuHec+/9nfu9557fORdmMYv/O+Rak70vpJcaP3gzDPNrnLg8DjvlS4cCgupGBS1yxFl56bn3xo7XRGDflqYlfpA6qJS+c/mja1LNbe1EUYggGD8A5aNMAtEBykyK6ATKC1A6ILTO/fB1j/Sf+ugvG3HRin2lc1f20HUJ7O9qvk0S/ollKzpb5y26Q40MnHVnD38mTgDncFEeowSjwdOC0YKnwUzrJ5ItZB57w104vteFg6fVz+dGc0XLto3vjvdU7qcrlQNdyQUkk8fvXd3dtviB1Xr8Qh+nv/lYCoUr2CjE2ggloERQCrQSlBK0AjWtLy5P4fJPclPHi5L/4xStidAbHsuvevpBM/DpyWLfVR54v6thXjKVPLls5ab29iUd2o39ihc0UIwmnWSdBWtBGUR7sahYKLWiDYguG042z6eQG6evdy2iNL9dGJtw1m7q3JM9WCbQszE9N2hMHWtbsHShOHJDA33pR555jea5t5IbOTd5X6JANIiKBQ1K4g1FynMSBygAQUOGyMGXO9bjbCGXDPxENpcPcazv3JM9JHs3N7UZY4cB/CB1Pizmv7v9vifX3bN6G9HIL+AszllwLrbqXKyX+v9kzM/cRXbkIl998PJFXHgmsvYJALFsVcZEbwOgZM2VYn5F0Jh5avmqrUSjv2OLE9hiDhdeKYsNp+nF3HXH8n+epXHOIu5euaFFtB62Si8WOOoUO6f8BQe2zzn8+ObdD6czC6+ZH/4Lvt2/PTd0/seNnbsqYgBgX3fTQ2LtUaV1UUR5ojTORjWYdjPOiMS2HC5voygAeH5PVqYQcCAfdje3ABRtdKlj7asMHOupbrFG3Hz/Or7/fAee0m0AnvjFZ3cNZgFMmSU4do9eBujdkiaRSpNMpetCIEg2ArChZL8S5qrVJSht8JMNdSGgjTfj3IwEtPHwE/XxgDZ+7QSM9ggS9fGA+fceuJEEPI+gTjFg/PIV+EDhWgQCoBXiimf8FLhackEViEKpctG9BRgDLgFRNQLNQMYpb3C4/8zczMKO0nBFknGVCceVdVd1TdwO9fdhxRsC5pf2jEokphDQJd374vTEW9idrwthS43nrQqHGfnkxMQ7QALwqHiHTM/5rUCm1AbEd1YPFAAFZIlPfh4oViMAkARaSpvPGKQ1IiS+j1FgHCYft9erevWqijNXqlncaPwNorOPpsGntkIAAAAASUVORK5CYII=);}
+                    .shop-tracking-status .image-order-status-active{left:22%}.shop-tracking-status .image-order-status-active .icon{background-image: url(data:image/png;base64,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);}
+                    .shop-tracking-status .image-order-status-intransit{left:45%}.shop-tracking-status .image-order-status-intransit .icon{background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA9dpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcFJpZ2h0czpNYXJrZWQ9IkZhbHNlIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpjMmY4Njc2Mi02MmNkLTExZGYtOGJjNS1hMWFiNzQ2MTIxODIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODI0OTQ1MTJFRTdCMTFERkFGNjZCMDk0NkMyREY1QUQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODI0OTQ1MTFFRTdCMTFERkFGNjZCMDk0NkMyREY1QUQiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RDAxODVEODIxQUJEREYx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);}
+                    .shop-tracking-status .image-order-status-delivered{left:70%}.shop-tracking-status .image-order-status-delivered .icon{background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMTgwMTE3NDA3MjA2ODExOEY2MkQyNTFFNDI0N0U3NSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3QzFCN0QwOUE1QUIxMUUwQjY1QUI1MUU1QzI1OUYyNCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3QzFCN0QwOEE1QUIxMUUwQjY1QUI1MUU1QzI1OUYyNCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZCN0YxMTc0MDcyMDY4MTE4NzFDREEyRkNEOTI0OThCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjAxODAxMTc0MDcyMDY4MTE4RjYyRDI1MUU0MjQ3RTc1Ii8+IDwvcmRmOkRlc2NyaXB0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);}
+                    .shop-tracking-status .image-order-status-delivered .status{top:85px;left:-180px;transform:rotate(-30deg);-webkit-transform:rotate(-30deg);text-align:right}.shop-tracking-status .image-order-status-delivered .status:before{display:none}
+                    .shop-tracking-status .image-order-status-delivered .status:after{font-family:FontAwesome;content:&quot;\f054&quot;;padding-left:5px;vertical-align:middle}
+                    .shop-tracking-status .image-order-status-completed{right:0px}.shop-tracking-status .image-order-status-completed .icon{background-image: url(data:image/png;base64,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);}
+                    .shop-tracking-status .image-order-status-completed .status{top:85px;left:-180px;transform:rotate(-30deg);-webkit-transform:rotate(-30deg);text-align:right}.shop-tracking-status .image-order-status-completed .status:before{display:none}
+                    .shop-tracking-status .image-order-status-completed .status:after{font-family:FontAwesome;content:&quot;\f054&quot;;padding-left:5px;vertical-align:middle}
+                </div>
+                <div id="editor-js" class="playground-editor" style="height:500px;" itemprop="sampleType"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="col-md-12">
+        <h2>Related: <small><a href="https://bootsnipp.com/similar/V14B">See <!--4--> More</a></small></h2>
+        <div class="row">
+            <div class="scrollpost col-sm-12 col-xs-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="thumbnail bootsnipp-thumb">
+                    <div>
+                        <p class="pull-right view-counts">
+                            <a target="_new" href="https://www.creative-tim.com/product/coming-sssoon-page?partner=114912" class="tip" data-toggle="tooltip" title="Favorited"></a>
+                            <a href="/templates">
+                                <span class="label label-info tip" data-toggle="tooltip" title="" data-original-title="Templates">
+                                    Free
+                                    Template
+                                </span>
+                            </a>
+                        </p>
+                        <p class="lead snipp-title">
+                            <a target="_new" href="https://www.creative-tim.com/product/coming-sssoon-page?partner=114912">Coming Sssoon Page<br /></a>
+                        </p>
+                    </div>
+                    <a target="_new" href="https://www.creative-tim.com/product/coming-sssoon-page?partner=114912">
+                        <img class="danlazy" src="https://s3.amazonaws.com/creativetim_bucket/products/20/thumb/coming_sssoon_thumbnail.png?1431435585" width="320" height="240" alt="Coming Sssoon Page">
+                    </a>
+
+                    <div class="caption">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-3 col-md-3 col-lg-3">
+                <div class="thumbnail bootsnipp-thumb">
+                    <div>
+                        <p class="pull-right view-counts hidden-md">
+                            <a href="https://bootsnipp.com/snippets/b2A29" class="tip" data-toggle="tooltip" title="Viewed">63.7K <i class="icon-eye-open"></i></a>
+
+                            <a href="https://bootsnipp.com/snippets/b2A29" class="tip" data-toggle="tooltip" title="Favorited">181 <i class="icon-thumbs-up"></i></a>
+                            <!--	    		<a href="https://bootsnipp.com/tags/3.3.0"><span class="label label-info tip" data-toggle="tooltip" title="Bootstrap version">3.3.0</span></a>-->
+                        </p>
+                        <p class="lead snipp-title">
+                            <a href="https://bootsnipp.com/snippets/b2A29">Status bar</a>
+                        </p>
+                    </div>
+                    <a href="https://bootsnipp.com/snippets/b2A29">
+                        <img class="lazy" data-original="//d2d3qesrx8xj6s.cloudfront.net/img/screenshots/1b3778301dc6e3cde178e07dc938abec65ac48f8.jpg" width="320" height="240" alt="Status bar">
+                    </a>
+
+                    <div class="caption">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-3 col-md-3 col-lg-3">
+                <div class="thumbnail bootsnipp-thumb">
+                    <div>
+                        <p class="pull-right view-counts hidden-md">
+                            <a href="https://bootsnipp.com/snippets/90Dbl" class="tip" data-toggle="tooltip" title="Viewed">44.0K <i class="icon-eye-open"></i></a>
+
+                            <a href="https://bootsnipp.com/snippets/90Dbl" class="tip" data-toggle="tooltip" title="Favorited">43 <i class="icon-thumbs-up"></i></a>
+                            <!--	    		<a href="https://bootsnipp.com/tags/3.3.0"><span class="label label-info tip" data-toggle="tooltip" title="Bootstrap version">3.3.0</span></a>-->
+                        </p>
+                        <p class="lead snipp-title">
+                            <a href="https://bootsnipp.com/snippets/90Dbl">Simple Status Page</a>
+                        </p>
+                    </div>
+                    <a href="https://bootsnipp.com/snippets/90Dbl">
+                        <img class="lazy" data-original="//d2d3qesrx8xj6s.cloudfront.net/img/screenshots/c341c8314952728de085ea2c4059de50e8789428.jpeg" width="320" height="240" alt="Simple Status Page">
+                    </a>
+
+                    <div class="caption">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-3 col-md-3 col-lg-3">
+                <div class="thumbnail bootsnipp-thumb">
+                    <div>
+                        <p class="pull-right view-counts hidden-md">
+                            <a href="https://bootsnipp.com/snippets/6KnQ5" class="tip" data-toggle="tooltip" title="Viewed">52.1K <i class="icon-eye-open"></i></a>
+
+                            <a href="https://bootsnipp.com/snippets/6KnQ5" class="tip" data-toggle="tooltip" title="Favorited">123 <i class="icon-thumbs-up"></i></a>
+                            <!--	    		<a href="https://bootsnipp.com/tags/3.2.0"><span class="label label-info tip" data-toggle="tooltip" title="Bootstrap version">3.2.0</span></a>-->
+                        </p>
+                        <p class="lead snipp-title">
+                            <a href="https://bootsnipp.com/snippets/6KnQ5">Status Boxes</a>
+                        </p>
+                    </div>
+                    <a href="https://bootsnipp.com/snippets/6KnQ5">
+                        <img class="lazy" data-original="//d2d3qesrx8xj6s.cloudfront.net/img/screenshots/f7c0de6bdce5e2782267a58e5bb2ebb8e3b159bf.jpeg" width="320" height="240" alt="Status Boxes">
+                    </a>
+
+                    <div class="caption">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<hr>
+<div class="container">
+    <div class="col-md-8">
+        <a name="comments"></a>
+        <h2 id="comments">Questions / Comments: </h2>
+        <input type="hidden" id="forumIdHash" value="V14B">
+        <link rel="stylesheet"
+              href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <style>
+            .hljs {
+                white-space: nowrap;
+                max-height: 300px;
+            }
+
+            pre {
+                padding: 0
+            }
+
+            .forumDivOuter {
+                padding: 10px 10px;
+            }
+
+            .forumTagline {
+                padding: 10px 0;
+            }
+
+            .forumvote:hover {
+                color: orange;
+                cursor: pointer;
+            }
+
+            .forumText {
+                font-weight: 500;
+                font-size: 1.2em;
+            }
+
+            .forumName {
+                font-weight: 200;
+                font-size: 1em;
+            }
+
+            .forumTime {
+                font-size: 1em;
+            }
+
+            .forumKey {
+                border-radius: 4px;
+                border: 2px solid #555;
+                width: 20px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 20px;
+                margin: 0 2px;
+            }
+        </style><div class="newPost"><div id="newPostContainer" class="container-fluid" style="margin-top:10px;"><!--<div class="row"><div class="col-xs-4"><hr style="margin-top:16px;border-top:1px solid #ccc;"></div><div class="col-xs-4 text-center"><a class="btn btn-md btn-warning" id="newPostButton">NEW POST</a></div><div class="col-xs-4"><hr style="margin-top:16px;border-top:1px solid #ccc;"></div></div>--></div><div class='forumDivOuter' style=''><div id="forumDiv"><textarea class="autoExpand forumPost form-control" rows="4" data-min-rows="4" placeholder="Enter your message here"></textarea><br /><button class="forumPostButton btn btn-default">Post</button><span style="margin: 0 10px;" class="pull-right"><a href="#" data-toggle="popover" title="" data-html="true" data-content="<ul><li>When asking a question, provide as much detail as possible.  Posts of simply &quot;It doesn't work&quot; may be removed.  </li><li>Don't Spam</li><li>Be respectful</li></ul>">Posting Guidelines</a></span><span style="margin: 0 10px;" class="pull-right"><a href="#" data-toggle="popover" title="" data-html="true" data-content="<ul><li><span class='forumKey'>`</span> - Surround code with backticks</li><li><span class='forumKey'>*</span> - Surround text with stars to italicize.</li><li><span class='forumKey'>&gt;</span><span class='forumKey'>&gt;</span> - A line starting with two greater than characters will be indented as a quote.</li><li>A blank line will separate paragraphs.</li></ul>">Formatting</a></span></div></div><hr><div class='col-md-12 hidden'><p class='forumTagline'><strong class='reply 0 name'></strong> - Now</p><hr></div></div>
+        <div style="margin-top:10px">
+            <center>
+
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-8815422507798180"
+                     data-ad-slot="5700240528"
+                     data-ad-format="auto"></ins>
+                <script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+
+                <!--<div id='div-gpt-ad-1491271781423-0'>
+                <script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1491271781423-0'); });
+                </script>
+                </div>
+                -->
+            </center>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+        <div style="margin-top:10px">
+            <center>
+
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-8815422507798180"
+                     data-ad-slot="5700240528"
+                     data-ad-format="auto"></ins>
+                <script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+
+                <!--<div id='div-gpt-ad-1491271781423-0'>
+                <script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1491271781423-0'); });
+                </script>
+                </div>
+                -->
+            </center>
+        </div>
+
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+
+            <!--             <div id="disqus_thread"></div>
+                            <script type="text/javascript">
+                                var disqus_shortname = 'bootsnipp'; // required: replace example with your forum shortname
+                                var disqus_identifier = 'V14B';
+                                (function() {
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                })();
+                            </script>
+                            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            -->
+        </div>
+        <div class="col-md-4" style="padding-top: 60px">
+            <!--<ins class="adsbygoogle"
+                 style="display:inline-block;width:336px;height:280px"
+                 data-ad-client="ca-pub-8815422507798180"
+                 data-ad-slot="3792335328"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            -->
+            <div id='div-gpt-ad-1490987467028-0'>
+                <script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1490987467028-0'); });
+                </script>
+            </div>
+
+        </div>
+    </div>
+</div>
+<footer class="bs-footer" role="contentinfo">
+    <div class="container">
+        <div class="bs-social">
+            <ul class="bs-social-buttons">
+                <li class="facebook-button">
+                    <div id="fb-root"></div>
+                    <div id="js-facebook-share" class="fb-like" data-href="http://bootsnipp.com" data-width="130" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+                </li>
+                <li class="follow-btn">
+                    <a id="js-twitter-follow" href="https://twitter.com/bootsnipp" class="twitter-follow-button" data-show-count="false">Follow @bootsnipp</a>
+                </li>
+                <li class="tweet-btn">
+                    <a id="js-twitter-tweet" href="https://twitter.com/share" class="twitter-share-button" data-url="http://bootsnipp.com" data-text="RT Design elements and code snippets for #twbootstrap HTML/CSS/JS framework" data-via="bootsnipp" data-related="bootsnipp">Tweet</a>
+                </li>
+            </ul>
+        </div>
+        <p>Bootsnipp.com &copy; 2017 <a href="http://www.danstools.com" target="_blank">Dan's Tools</a> | <a href="https://bootsnipp.com/privacy" target="_blank">Site Privacy policy</a> | <a href="/about">About</a> | <a href="mailto:bootsnipp@gmail.com">Advertise</a> | Featured snippets are <a href="https://bootsnipp.com/license">MIT license.</a> </p>
+    </div>
+
+</footer>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="/dist/scripts.min.js"></script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="//www.danstools.com/js/forum.js"></script>
+<script type="text/javascript">
+$(function(){
+        $('iframe.new-preview').each(function()
+        {
+                previewportWidth = $(this).parent().innerWidth()-15;
+                factor = previewportWidth/1200;
+console.log(factor);
+                $(this).css({
+    'height': '800px',
+    'width': '1200px',
+    '-ms-zoom': factor,
+    '-ms-transform': 'scale('+factor+')',
+    'transform': 'scale('+factor+')',
+    '-moz-transform': 'scale('+factor+')',
+    '-moz-transform-origin': '0 0',
+    '-o-transform': 'scale('+factor+')',
+    '-o-transform-origin': '0 0',
+    '-webkit-transform': 'scale('+factor+')',
+    '-webkit-transform-origin': '0 0'
+                });
+                $(this).parent().css('height',$(this).parent().innerWidth()*.75);
+        });
+$('iframe.snippet-preview').each(function()
+        {
+                previewportWidth = $(this).parent().parent().innerWidth()-30;
+                $(this).zoomer({ width: previewportWidth, height: $(this).parent().innerWidth()*.75, zoom: .5, message : '' ,messageURL : $(this).attr('data-url') })
+                $(this).zoomer('refresh');
+        });
+});
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js"></script>
+<script type="text/javascript">
+(function($) {
+    window.addEventListener('message', receiveMessage, false);
+    function receiveMessage(evt)
+    {
+        if (evt.origin !== 'https://bootsnipp.com') return;
+
+        if ((evt.data != undefined) && (evt.data) && (typeof evt.data === "number"))
+            if(evt.data >= 500) {
+//                $('#playground-container').css('height', evt.data+30+'px');
+            }
+    }
+
+    var version = '3.1.0';
+    var version_jq = '1.11.1';
+    var htmleditor = ace.edit("editor-html");
+    var jseditor = ace.edit("editor-js");
+    var csseditor = ace.edit("editor-css");
+
+    $('#theme_chooser').change(function(){
+        whichCSS = $(this).val();
+        document.getElementById('snippet-preview').contentWindow.changeCSS(whichCSS);
+    });
+
+    function setEditorOptions(editor, type){
+        editor.setTheme("ace/theme/clouds");
+        editor.setHighlightActiveLine(false);
+//        editor.setReadOnly(true);
+        editor.getSession().setMode("ace/mode/"+type);
+    };
+
+    setEditorOptions(htmleditor,'html');
+    setEditorOptions(jseditor,'javascript');
+    setEditorOptions(csseditor,'css');
+
+    function markActive(el)
+    {
+       $(el).siblings().removeClass('active');
+       $(el).addClass('active');
+    }
+
+    $('#show-html').click(function(e){
+        e.preventDefault();
+        $('#editor-html').show().siblings().hide();
+        markActive(this);
+        $('#preview-container').hide();
+        htmleditor.resize();
+    });
+
+    $('#show-js').click(function(e){
+        e.preventDefault();
+        $('#editor-js').show().siblings().hide();
+        $('#preview-container').hide();
+        markActive(this);
+        jseditor.resize();
+    });
+
+    $('#show-css').click(function(e){
+        e.preventDefault();
+        $('#editor-css').show().siblings().hide();
+        $('#preview-container').hide();
+        markActive(this);
+        csseditor.resize();
+    });
+
+    $('#show-preview').click(function(e){
+        e.preventDefault();
+
+        markActive(this);
+
+        $('.playground-editor').hide();
+
+        var html = buildSource(htmleditor, jseditor, csseditor);
+        var iframe = document.createElement('iframe');
+
+        iframe.src = 'about:blank';
+        iframe.frameBorder="0";
+        iframe.height = 496;
+        iframe.className = 'preview-iframe';
+
+        $('.preview-iframe').remove();
+        $('div#preview-container').append(iframe);
+
+        iframe.contentWindow.document.open('text/html', 'replace');
+        iframe.contentWindow.document.write(html);
+        iframe.contentWindow.document.close();
+
+        $('#preview-container').show();
+    });
+
+    var cssurls = {};
+    var jsurls = {};
+    var jqurls = {};
+
+        cssurls['4.1.1'] = '//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css';
+    jsurls['4.1.1'] = '//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js';
+        cssurls['4.0.0'] = '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+    jsurls['4.0.0'] = '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js';
+        cssurls['3.3.0'] = '//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css';
+    jsurls['3.3.0'] = '//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js';
+        cssurls['3.2.0'] = '//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css';
+    jsurls['3.2.0'] = '//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js';
+        cssurls['3.1.0'] = '//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css';
+    jsurls['3.1.0'] = '//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js';
+        cssurls['3.0.3'] = '//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css';
+    jsurls['3.0.3'] = '//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js';
+        cssurls['3.0.1'] = '//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css';
+    jsurls['3.0.1'] = '//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js';
+        cssurls['3.0.0'] = '//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css';
+    jsurls['3.0.0'] = '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js';
+        cssurls['2.3.2'] = '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css';
+    jsurls['2.3.2'] = '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js';
+
+        jqurls['3.2.1'] = '//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js';
+        jqurls['2.2.4'] = '//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js';
+        jqurls['1.11.1'] = '//code.jquery.com/jquery-1.11.1.min.js';
+
+
+    function buildSource(htmleditor, jseditor, csseditor)
+    {
+        var code = {};
+        code.html = htmleditor.getValue();
+        code.css = csseditor.getValue();
+        code.js = jseditor.getValue();
+        code.bootstrapcss = cssurls[version];
+        code.bootstrapjs = jsurls[version];
+        code.jqueryurl = jqurls[version_jq];
+
+        var template = "<!doctype html>\n\
+                        <html>\n\
+                            <head>\n\
+                                <meta charset='utf-8'>\n\
+                                <meta name='viewport' content='width=device-width, initial-scale=1'>\n\
+                                <title>Snippet - Bootsnipp.com</title>\n\
+                                <link href='|bootstrapcss|' rel='stylesheet'>\n\
+                                <style>|css|\x3C/style>\n\
+                                \x3Cscript type='text/javascript' src='|jqueryurl|'>\x3C/script>\n\
+                                \x3Cscript type='text/javascript' src='|bootstrapjs|'>\x3C/script>\n\
+                                \x3Cscript type='text/javascript'>|js|\x3C/script>\n\
+                            </head>\n\
+                            <body>\n\
+                            |html|\n\
+                            </body>\n\
+                        </html>";
+
+        content = template.replace(/\|(\w+)\|/g, function(match, str)
+        {
+            if(str in code) return code[str];
+            return '';
+        });
+
+        return content;
+    }
+
+
+})(jQuery);
+</script>
+
+<div class="modal fade" id="DonateModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="margin-top:100px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h1 class="modal-title" id="lineModalLabel">Donate</h1>
+            </div>
+            <div class="modal-body text-center">
+                <!--    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALcAAAC4CAYAAAChOH1KAAAABHNCSVQICAgIfAhkiAAABDVJREFUeJzt3dFuEzEUQEGC+P9fDu8oq9bFjr0nM48IhdAeWdor2/t4Pp/PXxD0e/cXgFXETZa4yRI3WeIm68+rP3w8Hu/+Hj9yNeiZ9f1HP3/14Gn0/zXr+9y1Bys3WeImS9xkiZsscZP1clpyZdc2lNOe1u8yFVk9XTm9Bys3WeImS9xkiZsscZM1NC25snovxyyjU4XRPSSz/v6oXXtOrpzSg5WbLHGTJW6yxE2WuMmaMi25i9XTjLucDNp1kujdrNxkiZsscZMlbrLETVZyWjLrqX/0c1ZPVz5lyjGLlZsscZMlbrLETZa4yZoyLTntaX3WVGH1fSl3+Z6jTunByk2WuMkSN1niJkvcZA1NS057Kp9l1/0kq0/KnHZfyrtZuckSN1niJkvcZImbrJfTklP2BvzU3e/rmDXlWD11OZ2VmyxxkyVussRNlrjJejxfPAqvfsfKKe9M+cqud9zM+n/t+j2u/vlc+ffftXKTJW6yxE2WuMkSN1lLb3m9yxt4r9xlj8pp061T3iVk5SZL3GSJmyxxkyVusm7xTpxd04nVU4JRq+8tufr7q/ecXPnfKYqVmyxxkyVussRNlrjJGpqWrD4hcve9Gafd/rrrnTunfH8rN1niJkvcZImbLHGTNeWW19UnaHbdB7LrfpJd75pZ/Xt89xTFyk2WuMkSN1niJkvcZE255XWWXXseZjnlvo67ff6q34uVmyxxkyVussRNlrjJOuokzqy/P+tzVr9pd9fJmtNOBo2yt4SPJ26yxE2WuMkSN1lDJ3Huvudk9cmgXSePVt8Dc9otu+4t4eOJmyxxkyVussRN1tJ34uyaTtx978SV1VOjXe++WTWNsXKTJW6yxE2WuMkSN1kvpyV32Utw+i2jP3WXk0qjn/Pue2ms3GSJmyxxkyVussRN1stbXoc/ZNMJnU+zaxqz2qppmJWbLHGTJW6yxE2WuMlaehLnyq49G6NOO7lz2i21o979ziArN1niJkvcZImbLHGTNXQS58pp74I5bcox6rTp0Cyzfv5ueeXjiZsscZMlbrLETdaUkzinWT3tmfXvjnr3vR8/9e49JFefY+UmS9xkiZsscZMlbrKm7C3ZZdY7cWadAFo9zdjltBNS32XlJkvcZImbLHGTJW6yhu4tucsJkdVTiF3v0Nk1XTltKuIkDh9P3GSJmyxxkyVusqbc8jrrKf60p/K732dy2pRp1P/2YOUmS9xkiZsscZMlbrK2vBNntVX3YHz1Oavv/di1d2XXdOjKd7+nlZsscZMlbrLETZa4yUpOS67cZW/GaXtsrpz+87RykyVussRNlrjJEjdZU6Ylpz3dr94jcdr9JLvuP9n1zp3vsnKTJW6yxE2WuMkSN1lD05LT7rVY7bQTKFd2vdNnF7e88vHETZa4yRI3WeIm6/G8yyMyDLJykyVussRN1l8F2immyBsj/gAAAABJRU5ErkJggg==" />-->
+                <br>BTC: 12JxYMYi6Vt3mx3hcmP3B2oyFiCSF3FhYT
+                <br>ETH: 0xCD715b2E3549c54A40e6ecAaFeB82138148a6c76
+                <hr>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="FDGD82NBKQDHJ">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" role="button">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

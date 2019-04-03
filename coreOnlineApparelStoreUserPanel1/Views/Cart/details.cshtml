@@ -1,0 +1,46 @@
+﻿@model coreOnlineApparelStoreUserPanel1.Models.Products
+@{
+    ViewData["Title"] = "details";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>details</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="@Html.DisplayFor(m => m.ProductImage)" class="bd-placeholder-img card-img-top" width="100" heignt="200" />
+    </div>
+    <div class="col-md-8">
+        <div class="form-group">
+            <label for="ProductId">ProductId : </label>
+            @Html.DisplayFor(m => m.ProductId)
+            <br />
+            <label for="ProductName">ProductName : </label>
+            @Html.DisplayFor(m => m.ProductName)
+            <br />
+            <label for="ProductPrice">ProductPrice : </label>
+            @Html.DisplayFor(m => m.ProductPrice)
+            <br />
+            <label for="ProductQuantity">ProductQuantity : </label>
+            @Html.DisplayFor(m => m.ProductQuantity)
+            <br />
+            <label for="ProductSize">ProductSize : </label>
+            @Html.DisplayFor(m => m.ProductSize)
+            <br />
+            <label for="ProductDescription">ProductDescription : </label>
+            @Html.DisplayFor(m => m.ProductDescription)
+            <br />
+            <label for="CategoryId">CategoryId : </label>
+            @Html.DisplayFor(m => m.CategoryId)
+            <br />
+            <label for="VendorId">VendorId : </label>
+            @Html.DisplayFor(m => m.VendorId)
+            <br />
+            <label for="BrandId">BrandId : </label>
+            @Html.DisplayFor(m => m.BrandId)
+            <br />
+        </div>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-sm btn-outline-secondary">BackToList</a>
+        <a asp-controller="Cart" asp-action="Buy" class="btn btn-sm btn-outline-secondary">Add To Cart</a>
+    </div>
+</div>

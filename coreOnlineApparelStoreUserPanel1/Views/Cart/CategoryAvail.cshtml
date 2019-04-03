@@ -1,0 +1,31 @@
+﻿@model IEnumerable<coreOnlineApparelStoreUserPanel1.Models.Categories>
+@{
+    ViewData["Title"] = "CategoryAvail";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>Category Available</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.CategoryId)</th>
+            <th>@Html.DisplayNameFor(model => model.CategoryName)</th>
+
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cat in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => cat.CategoryId)</td>
+                <td>@Html.DisplayFor(modelItem => cat.CategoryName)</td>
+
+                <td>
+
+                    <a asp-controller="Cart" asp-action="DisplayByCategory" asp-route-id="@cat.CategoryId"><button type="button" class="btn btn-light">Products</button></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
