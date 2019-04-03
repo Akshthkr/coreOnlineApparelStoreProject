@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 
 namespace coreOnlineApparelStoreAdminPortal.Models
 {
-    public class OrderProduct
+    public class Cart
     {
-        [Column(Order = 0),Key,ForeignKey("Order")]
-        public int OrderId { get; set;}
+        [Column(Order = 0), Key, ForeignKey("Customer")]
+        public int CustomerId { get; set; }
         [Column(Order = 1), Key, ForeignKey("Product")]
-        public int Productid { get; set; }
+        public int ProductId { get; set; }
         public int Quantity { get; set; }
-        public Order Order { get; set; }
+        public DateTime ItemCreated { get; set; }
         public Product Product { get; set; }
+        public Customer Customer { get; set; }
     }
 }

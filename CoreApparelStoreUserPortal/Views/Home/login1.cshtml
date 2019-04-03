@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "login1";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>login1</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Sign In</h5>
+                    <form class="form-signin" method="post" asp-controller="home" asp-action="log">
+                        <div class="form-label-group">
+                            <input type="text" name="username" class="form-control" placeholder="username" required autofocus>
+                            <label for="username" class="sr-only">UserName</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="password" name="password" class="form-control" placeholder="password" required>
+                            <label for="password" class="sr-only">Password</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Remember password</label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                        <hr class="my-4">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -15,12 +15,16 @@ namespace CoreApparelStoreUserPortal.Models
         {
         }
 
+        public virtual DbSet<Admins> Admins { get; set; }
         public virtual DbSet<Brands> Brands { get; set; }
+        public virtual DbSet<Carts> Carts { get; set; }
         public virtual DbSet<Categories> Categories { get; set; }
         public virtual DbSet<Customers> Customers { get; set; }
+        public virtual DbSet<Feedbacks> Feedbacks { get; set; }
         public virtual DbSet<OrderProducts> OrderProducts { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Vendors> Vendors { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -34,11 +38,34 @@ namespace CoreApparelStoreUserPortal.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Admins>(entity =>
+            {
+                entity.HasKey(e => e.AdminId);
+            });
+
             modelBuilder.Entity<Brands>(entity =>
             {
                 entity.HasKey(e => e.BrandId);
 
                 entity.Property(e => e.BrandName).IsRequired();
+            });
+
+            modelBuilder.Entity<Carts>(entity =>
+            {
+                entity.HasKey(e => new { e.CustomerId, e.ProductId });
+
+                entity.HasIndex(e => e.CustomerId)
+                    .IsUnique();
+
+                entity.HasIndex(e => e.ProductId);
+
+                entity.HasOne(d => d.Customer)
+                    .WithOne(p => p.Carts)
+                    .HasForeignKey<Carts>(d => d.CustomerId);
+
+                entity.HasOne(d => d.Product)
+                    .WithMany(p => p.Carts)
+                    .HasForeignKey(d => d.ProductId);
             });
 
             modelBuilder.Entity<Categories>(entity =>
@@ -51,6 +78,27 @@ namespace CoreApparelStoreUserPortal.Models
             modelBuilder.Entity<Customers>(entity =>
             {
                 entity.HasKey(e => e.CustomerId);
+
+                entity.Property(e => e.CustomerPhoneNumber2).HasDefaultValueSql("(CONVERT([bigint],(0)))");
+            });
+
+            modelBuilder.Entity<Feedbacks>(entity =>
+            {
+                entity.HasKey(e => new { e.ProductId, e.OrderId });
+
+                entity.HasIndex(e => new { e.OrderId, e.ProductId })
+                    .HasName("AK_Feedbacks_OrderId_ProductId")
+                    .IsUnique();
+
+                entity.Property(e => e.Message).HasColumnName("message");
+
+                entity.HasOne(d => d.Order)
+                    .WithMany(p => p.Feedbacks)
+                    .HasForeignKey(d => d.OrderId);
+
+                entity.HasOne(d => d.Product)
+                    .WithMany(p => p.Feedbacks)
+                    .HasForeignKey(d => d.ProductId);
             });
 
             modelBuilder.Entity<OrderProducts>(entity =>
@@ -104,6 +152,17 @@ namespace CoreApparelStoreUserPortal.Models
                 entity.HasOne(d => d.Vendor)
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.VendorId);
+            });
+
+            modelBuilder.Entity<Users>(entity =>
+            {
+                entity.ToTable("users");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Name)
+                    .HasColumnName("name")
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<Vendors>(entity =>

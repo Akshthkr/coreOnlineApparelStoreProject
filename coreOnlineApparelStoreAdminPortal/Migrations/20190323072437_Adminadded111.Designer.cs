@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using coreOnlineApparelStoreAdminPortal.Models;
 
 namespace coreOnlineApparelStoreAdminPortal.Migrations
 {
     [DbContext(typeof(DbContextClass))]
-    partial class DbContextClassModelSnapshot : ModelSnapshot
+    [Migration("20190323072437_Adminadded111")]
+    partial class Adminadded111
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,25 +27,25 @@ namespace coreOnlineApparelStoreAdminPortal.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AdminAddress");
-
-                    b.Property<string>("AdminCountry");
-
                     b.Property<string>("AdminEmail");
 
                     b.Property<string>("AdminFirstName");
 
-                    b.Property<string>("AdminGender");
-
                     b.Property<string>("AdminLastName");
-
-                    b.Property<string>("AdminPassword");
 
                     b.Property<long>("AdminPhoneNumber");
 
-                    b.Property<string>("AdminState");
+                    b.Property<string>("CustomerAddress1");
 
-                    b.Property<string>("AdminZipNumber");
+                    b.Property<string>("CustomerCountry");
+
+                    b.Property<string>("CustomerGender");
+
+                    b.Property<string>("CustomerPassword");
+
+                    b.Property<string>("CustomerState");
+
+                    b.Property<string>("CustomerZipNumber");
 
                     b.HasKey("AdminId");
 

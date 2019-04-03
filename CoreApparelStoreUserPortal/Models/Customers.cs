@@ -23,7 +23,13 @@ namespace CoreApparelStoreUserPortal.Models
         public string CustomerAddress1 { get; set; }
         public string CustomerAddress2 { get; set; }
         public bool SameAddress { get; set; }
+        public string CustomerPassword { get; set; }
+        public string CustomerCountry2 { get; set; }
+        public long CustomerPhoneNumber2 { get; set; }
+        public string CustomerState2 { get; set; }
+        public string CustomerZipNumber2 { get; set; }
 
+        public Carts Carts { get; set; }
         public ICollection<Orders> Orders { get; set; }
     }
 }

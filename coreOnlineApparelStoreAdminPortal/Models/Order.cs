@@ -13,5 +13,6 @@ namespace coreOnlineApparelStoreAdminPortal.Models
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
         public List<OrderProduct> OrderProducts { get; set; }
+        public List<Feedback> Feedbacks { get; set; }
     }
 }

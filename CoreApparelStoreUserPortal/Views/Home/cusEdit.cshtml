@@ -1,0 +1,114 @@
+﻿@model CoreApparelStoreUserPortal.Models.Customers
+
+@{
+    ViewData["Title"] = "cusEdit";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>cusEdit</h2>
+
+<h4>Customers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="cusEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+            <div class="form-group">
+                <label asp-for="CustomerFirstName" class="control-label"></label>
+                <input asp-for="CustomerFirstName" class="form-control" />
+                <span asp-validation-for="CustomerFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerLastName" class="control-label"></label>
+                <input asp-for="CustomerLastName" class="form-control" />
+                <span asp-validation-for="CustomerLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerUserName" class="control-label"></label>
+                <input asp-for="CustomerUserName" class="form-control" />
+                <span asp-validation-for="CustomerUserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerEmail" class="control-label"></label>
+                <input asp-for="CustomerEmail" class="form-control" />
+                <span asp-validation-for="CustomerEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerPhoneNumber" class="control-label"></label>
+                <input asp-for="CustomerPhoneNumber" class="form-control" />
+                <span asp-validation-for="CustomerPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerGender" class="control-label"></label>
+                <input asp-for="CustomerGender" class="form-control" />
+                <span asp-validation-for="CustomerGender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerCountry" class="control-label"></label>
+                <input asp-for="CustomerCountry" class="form-control" />
+                <span asp-validation-for="CustomerCountry" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerState" class="control-label"></label>
+                <input asp-for="CustomerState" class="form-control" />
+                <span asp-validation-for="CustomerState" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerZipNumber" class="control-label"></label>
+                <input asp-for="CustomerZipNumber" class="form-control" />
+                <span asp-validation-for="CustomerZipNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerAddress1" class="control-label"></label>
+                <input asp-for="CustomerAddress1" class="form-control" />
+                <span asp-validation-for="CustomerAddress1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerAddress2" class="control-label"></label>
+                <input asp-for="CustomerAddress2" class="form-control" />
+                <span asp-validation-for="CustomerAddress2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="SameAddress" /> @Html.DisplayNameFor(model => model.SameAddress)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerPassword" class="control-label"></label>
+                <input asp-for="CustomerPassword" class="form-control" />
+                <span asp-validation-for="CustomerPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerCountry2" class="control-label"></label>
+                <input asp-for="CustomerCountry2" class="form-control" />
+                <span asp-validation-for="CustomerCountry2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerPhoneNumber2" class="control-label"></label>
+                <input asp-for="CustomerPhoneNumber2" class="form-control" />
+                <span asp-validation-for="CustomerPhoneNumber2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerState2" class="control-label"></label>
+                <input asp-for="CustomerState2" class="form-control" />
+                <span asp-validation-for="CustomerState2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerZipNumber2" class="control-label"></label>
+                <input asp-for="CustomerZipNumber2" class="form-control" />
+                <span asp-validation-for="CustomerZipNumber2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

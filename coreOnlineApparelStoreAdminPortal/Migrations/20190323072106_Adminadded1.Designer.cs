@@ -3,52 +3,23 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using coreOnlineApparelStoreAdminPortal.Models;
 
 namespace coreOnlineApparelStoreAdminPortal.Migrations
 {
     [DbContext(typeof(DbContextClass))]
-    partial class DbContextClassModelSnapshot : ModelSnapshot
+    [Migration("20190323072106_Adminadded1")]
+    partial class Adminadded1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("coreOnlineApparelStoreAdminPortal.Models.Admin", b =>
-                {
-                    b.Property<int>("AdminId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AdminAddress");
-
-                    b.Property<string>("AdminCountry");
-
-                    b.Property<string>("AdminEmail");
-
-                    b.Property<string>("AdminFirstName");
-
-                    b.Property<string>("AdminGender");
-
-                    b.Property<string>("AdminLastName");
-
-                    b.Property<string>("AdminPassword");
-
-                    b.Property<long>("AdminPhoneNumber");
-
-                    b.Property<string>("AdminState");
-
-                    b.Property<string>("AdminZipNumber");
-
-                    b.HasKey("AdminId");
-
-                    b.ToTable("Admins");
-                });
 
             modelBuilder.Entity("coreOnlineApparelStoreAdminPortal.Models.Brand", b =>
                 {
@@ -185,13 +156,13 @@ namespace coreOnlineApparelStoreAdminPortal.Migrations
                 {
                     b.Property<int>("OrderId");
 
-                    b.Property<int>("Productid");
+                    b.Property<int>("ProductId");
 
                     b.Property<int>("Quantity");
 
-                    b.HasKey("OrderId", "Productid");
+                    b.HasKey("OrderId", "ProductId");
 
-                    b.HasIndex("Productid");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("OrderProducts");
                 });
@@ -295,7 +266,7 @@ namespace coreOnlineApparelStoreAdminPortal.Migrations
 
                     b.HasOne("coreOnlineApparelStoreAdminPortal.Models.Product", "Product")
                         .WithMany("OrderProducts")
-                        .HasForeignKey("Productid")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

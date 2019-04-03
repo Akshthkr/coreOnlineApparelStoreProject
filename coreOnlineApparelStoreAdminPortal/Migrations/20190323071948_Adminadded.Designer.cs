@@ -3,52 +3,23 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using coreOnlineApparelStoreAdminPortal.Models;
 
 namespace coreOnlineApparelStoreAdminPortal.Migrations
 {
     [DbContext(typeof(DbContextClass))]
-    partial class DbContextClassModelSnapshot : ModelSnapshot
+    [Migration("20190323071948_Adminadded")]
+    partial class Adminadded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("coreOnlineApparelStoreAdminPortal.Models.Admin", b =>
-                {
-                    b.Property<int>("AdminId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AdminAddress");
-
-                    b.Property<string>("AdminCountry");
-
-                    b.Property<string>("AdminEmail");
-
-                    b.Property<string>("AdminFirstName");
-
-                    b.Property<string>("AdminGender");
-
-                    b.Property<string>("AdminLastName");
-
-                    b.Property<string>("AdminPassword");
-
-                    b.Property<long>("AdminPhoneNumber");
-
-                    b.Property<string>("AdminState");
-
-                    b.Property<string>("AdminZipNumber");
-
-                    b.HasKey("AdminId");
-
-                    b.ToTable("Admins");
-                });
 
             modelBuilder.Entity("coreOnlineApparelStoreAdminPortal.Models.Brand", b =>
                 {
