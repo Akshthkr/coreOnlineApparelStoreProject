@@ -30,14 +30,7 @@
                     </div>
                 </li>
             </ul>
-            <a class="" asp-action="userprofile" asp-controller="Home" asp-route-id="@Context.Session.GetString("logout")">@Context.Session.GetString("logout")</a>
-            @if (@Context.Session.GetString("logout") == null)
-            {<a href="" class="btn btn-secondary" data-toggle="modal" data-target="#modalLRForm">Login</a>
-            }
-            else
-            {
- <a class="btn btn-secondary" asp-action="logout" asp-controller="Home">LogOut</a>
-            }
+
             <form class="form-inline my-2 my-lg-0" asp-action="Search" asp-controller="Home">
                 <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
@@ -45,7 +38,27 @@
 
 
                 <a class="btn btn-secondary my-2 my-sm-0" asp-action="Index" asp-controller="Cart">Cart @Context.Session.GetString("cartitem")</a>
-            </form>
+
+                &nbsp;
+                @if (@Context.Session.GetString("Logout") == null)
+                {<a href="" class="btn btn-success" data-toggle="modal" data-target="#modalLRForm">Login</a>
+                }
+                else
+                {
+                    
+                    <div class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" class="btn btn-secondary" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Context.Session.GetString("name")</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdown02">
+                            <a class="dropdown-item" asp-action="userprofile" asp-controller="Home">View Profile</a>
+                           
+                            <a class="dropdown-item" asp-action="CustomerHistory" asp-controller="Home">View Order History</a>
+                            <a class="dropdown-item" asp-action="changepassword" asp-controller="Home">Change Password</a>
+                            <a class="dropdown-item" asp-action="logout" asp-controller="Home">Logout</a>
+                            @*<a class="dropdown-item" href="#">Something else here</a>*@
+                        </div>
+                    </div>
+                        }
+</form>
         </div>
     </nav>
 
@@ -84,7 +97,7 @@
                                     <!--Body-->
                                     <form class="form-signin" method="post" asp-controller="Cart" asp-action="login">
                                         <div class="form-label-group">
-                                            <input type="text" name="username" class="form-control" placeholder="username" required autofocus>
+                                            <input type="text" name="username" class="form-control" placeholder="Email" required autofocus>
                                             <label for="username" class="sr-only">UserName</label>
                                         </div>
                                         <br />
@@ -103,7 +116,6 @@
                                     <!--Footer-->
                                     <div class="modal-footer">
                                         <div class="options text-center text-md-right mt-1">
-                                            <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
                                             <p>Forgot <a href="#" class="blue-text">Password?</a></p>
                                         </div>
                                         <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
@@ -118,7 +130,7 @@
                                     <div class="modal-body">
                                         <form class="form-signin" method="post" asp-controller="Cart" asp-action="register">
                                             <div class="form-label-group">
-                                                <input type="text" name="username" class="form-control" placeholder="username" required autofocus>
+                                                <input type="text" name="username" class="form-control" placeholder="Email" required autofocus>
                                                 <label for="username" class="sr-only">UserName</label>
                                             </div>
                                             <br />
@@ -147,9 +159,6 @@
                                     </div>
                                     <!--Footer-->
                                     <div class="modal-footer">
-                                        <div class="options text-right">
-                                            <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
-                                        </div>
                                         <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using coreOnlineApparelStoreAdminPortal.Models;
 
 namespace coreOnlineApparelStoreAdminPortal.Migrations
 {
     [DbContext(typeof(DbContextClass))]
-    partial class DbContextClassModelSnapshot : ModelSnapshot
+    [Migration("20190404070908_feed")]
+    partial class feed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -149,17 +151,15 @@ namespace coreOnlineApparelStoreAdminPortal.Migrations
 
             modelBuilder.Entity("coreOnlineApparelStoreAdminPortal.Models.Feedback", b =>
                 {
-                    b.Property<int>("FeedbackId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("ProductId");
 
-                    b.Property<int>("CustomerId");
+                    b.Property<int>("OrderId");
 
                     b.Property<string>("message");
 
-                    b.HasKey("FeedbackId");
+                    b.HasKey("ProductId", "OrderId");
 
-                    b.HasIndex("CustomerId");
+                    b.HasAlternateKey("OrderId", "ProductId");
 
                     b.ToTable("Feedbacks");
                 });
@@ -269,9 +269,14 @@ namespace coreOnlineApparelStoreAdminPortal.Migrations
 
             modelBuilder.Entity("coreOnlineApparelStoreAdminPortal.Models.Feedback", b =>
                 {
-                    b.HasOne("coreOnlineApparelStoreAdminPortal.Models.Customer", "Customer")
+                    b.HasOne("coreOnlineApparelStoreAdminPortal.Models.Order", "Order")
                         .WithMany("Feedbacks")
-                        .HasForeignKey("CustomerId")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("coreOnlineApparelStoreAdminPortal.Models.Product", "Products")
+                        .WithMany("Feedbacks")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

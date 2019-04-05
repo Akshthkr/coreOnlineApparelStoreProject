@@ -37,10 +37,6 @@ namespace coreOnlineApparelStoreAdminPortal.Models
             {
                 Build.HasKey(t => new { t.CustomerId, t.ProductId });
             });
-            modelBuilder.Entity<Feedback>(Build =>
-            {
-                Build.HasKey(t => new { t.ProductId, t.OrderId});
-            });
         }
     }
 }

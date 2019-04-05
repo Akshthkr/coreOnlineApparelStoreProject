@@ -9,12 +9,10 @@ namespace coreOnlineApparelStoreAdminPortal.Models
 {
     public class Feedback
     {
-        [Column(Order = 0), Key, ForeignKey("Product")]
-        public int ProductId { get; set; }
-        [Column(Order = 1), Key, ForeignKey("Order")]
-        public int OrderId { get; set; }
+        public int FeedbackId { get; set; }
+        public int CustomerId { get; set; }
         public string message { get; set; }
-        public Product Products { get; set; }
-        public Order Order { get; set; }
+        public Customer Customer { get; set; }
+      
     }
 }

@@ -84,21 +84,15 @@ namespace CoreApparelStoreUserPortal.Models
 
             modelBuilder.Entity<Feedbacks>(entity =>
             {
-                entity.HasKey(e => new { e.ProductId, e.OrderId });
+                entity.HasKey(e => e.FeedbackId);
 
-                entity.HasIndex(e => new { e.OrderId, e.ProductId })
-                    .HasName("AK_Feedbacks_OrderId_ProductId")
-                    .IsUnique();
+                entity.HasIndex(e => e.CustomerId);
 
                 entity.Property(e => e.Message).HasColumnName("message");
 
-                entity.HasOne(d => d.Order)
+                entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Feedbacks)
-                    .HasForeignKey(d => d.OrderId);
-
-                entity.HasOne(d => d.Product)
-                    .WithMany(p => p.Feedbacks)
-                    .HasForeignKey(d => d.ProductId);
+                    .HasForeignKey(d => d.CustomerId);
             });
 
             modelBuilder.Entity<OrderProducts>(entity =>

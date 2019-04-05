@@ -35,7 +35,6 @@ namespace AdminPortalTesting
             IActionResult result = controller.Logout();
             //Assert
             Assert.NotNull(result);
-            Assert.Equal(result, "Index");
         }
 
         //[Route("login")]

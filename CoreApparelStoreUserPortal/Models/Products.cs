@@ -8,7 +8,6 @@ namespace CoreApparelStoreUserPortal.Models
         public Products()
         {
             Carts = new HashSet<Carts>();
-            Feedbacks = new HashSet<Feedbacks>();
             OrderProducts = new HashSet<OrderProducts>();
         }
 
@@ -27,7 +26,6 @@ namespace CoreApparelStoreUserPortal.Models
         public Categories Category { get; set; }
         public Vendors Vendor { get; set; }
         public ICollection<Carts> Carts { get; set; }
-        public ICollection<Feedbacks> Feedbacks { get; set; }
         public ICollection<OrderProducts> OrderProducts { get; set; }
     }
 }

@@ -15,7 +15,6 @@ namespace CoreApparelStoreUserPortal.Controllers
         MainApparelDbContext context = new MainApparelDbContext();
         public IActionResult Index()
         {
-            HttpContext.Session.SetString("homecart", "Login");
             var product = context.Products.ToList();
             int j = 0;
             var cart = SessionHelper.GetObectFromJson<List<Item>>(HttpContext.Session, "cart");
@@ -57,68 +56,45 @@ namespace CoreApparelStoreUserPortal.Controllers
         }
         public IActionResult logout()
         {
-            HttpContext.Session.Remove("logout");
             HttpContext.Session.Remove("cartitem");
 
             SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", null);
             SessionHelper.SetObjectAsJson(HttpContext.Session, "cus", null);
-            HttpContext.Session.SetString("log", "Logout");
+            HttpContext.Session.Remove("Logout");
+
             return RedirectToAction("index");
 
         }
-        public IActionResult userprofile(string id)
+        public IActionResult userprofile()
         {
-            Customers c = context.Customers.Where(x => x.CustomerEmail == id).SingleOrDefault();
+            Customers c =  SessionHelper.GetObectFromJson<Customers>(HttpContext.Session, "cus");
             int a = c.CustomerId;
             ViewBag.id = a;
             return View(c);
 
         }
-        public IActionResult CustomerHistory(int id)
+        public IActionResult CustomerHistory()
         {
-            List<Orders> a = context.Orders.Where(x => x.CustomerId == id).ToList();
-            int i = 0;
-            var cart = SessionHelper.GetObectFromJson<List<History>>(HttpContext.Session, "hist");
+            Customers c= SessionHelper.GetObectFromJson<Customers>(HttpContext.Session, "cus");
+            List<Orders> a = context.Orders.Where(x => x.CustomerId == c.CustomerId).ToList();
+            ViewBag.a = a;
+           
+            return View();
 
-            List<History> b = new List<History>();
-            List<object> c=new List<object>();
-            foreach (var item in a)
+
+        }
+        public IActionResult orderdetail(int id)
+        {
+            List<OrderProducts> op = new List<OrderProducts>();
+            List<Products> products = new List<Products>();
+            op = context.OrderProducts.Where(x => x.OrderId == id).ToList();
+            foreach(var item in op)
             {
-                var query = (from o in a
-                             join op in context.OrderProducts 
-                         on o.OrderId equals op.OrderId into ocop
-                         from y in ocop.DefaultIfEmpty()
-                             join p in context.Products
-                               on y.Productid equals p.ProductId
-                             
-                             select new
-                             {
-                                 o.OrderDate,
-                                 o.OrderAmount,
-                                 p.ProductImage,
-                                 p.ProductName,
-                                 y.Quantity
-                             }).ToList(); ;
-               
-                   foreach(var item1 in query)
-                {
-                    History h = new History();
-                    h.OrderDate = item1.OrderDate;
-                    h.OrderAmount = item1.OrderAmount;
-                    h.ProductImage = item1.ProductImage;
-                    h.ProductName = item1.ProductName;
-                    h.Quantity = item1.Quantity;
-                    b.Add(h);
-                }
-                    
-                
-                //q.Add(query.ToList());
-               
+                Products c = context.Products.Where(x => x.ProductId == item.Productid).SingleOrDefault();
+                products.Add(c);
             }
-            ViewBag.history = b;
-            return View(b);
-
-
+            ViewBag.p = products;
+            return View();
         }
         [Route("Search")]
         [HttpPost]
@@ -157,20 +133,47 @@ namespace CoreApparelStoreUserPortal.Controllers
             return View(prod);
         }
 
-        public ActionResult cusEdit(int id)
+        public ActionResult cusEdit()
         {
-            Customers ban = context.Customers.Where(x => x.CustomerId == id).SingleOrDefault();
-            return View(ban);
+            Customers cus = SessionHelper.GetObectFromJson<Customers>(HttpContext.Session, "cus");
+            return View(cus);
         }
         [HttpPost]
-        public ActionResult cusEdit(int id, Customers b1)
+        public ActionResult cusEdit(int id, Customers customers)
         {
-            Customers b = context.Customers.Where(x => x.CustomerId == b1.CustomerId).SingleOrDefault();
-            context.Entry(b).CurrentValues.SetValues(b1);
+            Customers c = context.Customers.Where(x => x.CustomerEmail == customers.CustomerEmail).SingleOrDefault();
+            c.CustomerFirstName = customers.CustomerFirstName;
+            c.CustomerLastName = customers.CustomerLastName;
+            c.CustomerPhoneNumber = customers.CustomerPhoneNumber;
+            c.CustomerCountry = customers.CustomerCountry;
+            c.CustomerState = customers.CustomerState;
+            c.CustomerZipNumber = customers.CustomerZipNumber;
+            c.CustomerAddress1 = customers.CustomerAddress1;
+            c.CustomerPhoneNumber2 = customers.CustomerPhoneNumber2;
+            c.SameAddress = customers.SameAddress;
             context.SaveChanges();
-            return RedirectToAction("userprofile");
+            return RedirectToAction("userprofile","home",new { @id = customers.CustomerEmail });
 
         }
+        [HttpGet]
+        public ActionResult changepassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult changepassword(string oldpassword, string newpassword, string newpassword1)
+        {
+            
+            Customers c= SessionHelper.GetObectFromJson<Customers>(HttpContext.Session, "cus");
+            if(oldpassword==c.CustomerPassword && newpassword == newpassword1)
+            {
+                Customers cus = context.Customers.Where(x => x.CustomerEmail == c.CustomerEmail).SingleOrDefault();
+                cus.CustomerPassword = newpassword;
+                context.SaveChanges();
 
+            }
+           
+            return RedirectToAction("index");
+        }
     }
 }

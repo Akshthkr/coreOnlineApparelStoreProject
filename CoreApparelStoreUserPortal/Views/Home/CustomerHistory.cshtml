@@ -2,30 +2,30 @@
 @{
     ViewData["Title"] = "CustomerHistory";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
+    <link href="~/css/modal.css" />
 }
 
-<h2>CustomerHistory</h2>
-
-<h2>Cart Page</h2>
+<h2>Orders</h2>
 <table class="table table-hover">
     <tr>
         <th>OrderId</th>
-        <th>Product  Name</th>
-        <th>Product Image</th>
-        <th>Quantity</th>
-        <th>Amount</th>
+        <th>OrderDate</th>
+        <th>OrderAmount</th>
+        <th>Action</th>
     </tr>
 
-    @foreach (var item in ViewBag.history)
+    @foreach (var item in ViewBag.a)
     {
-    <tr>
-        <td>@item.OrderDate</td>
-        <td>@item.ProductName</td>
-        <td><img src="@item.ProductImage" width="60" /></td>
-        <td>  @item.Quantity </td>
-        <td>@item.OrderAmount</td>
-    </tr>
+        <tr>
+            <td>@item.OrderId</td>
+            <td>@item.OrderDate</td>
+            <td>  @item.OrderAmount </td>
+            <td><a asp-controller="home" asp-action="orderdetail" class="btn btn-info" asp-route-id="@item.OrderId">Products</a></td>
+        </tr>
     }
-    
+
+
 
 </table>
+<a asp-controller="home" asp-action="userprofile" class="btn btn-info">back</a>
+<br />

@@ -26,8 +26,10 @@ namespace coreOnlineApparelStoreAdminPortal.Models
             public string CustomerAddress2 { get; set; }
             public bool SameAddress { get; set; }
             public Cart Cart { get; set; }
-            public List<Order> Orders { get; set; }
-        }
+        public List<Order> Orders { get; set; }
+        public List<Feedback> Feedbacks { get; set; }
 
-    
+    }
+
+
 }

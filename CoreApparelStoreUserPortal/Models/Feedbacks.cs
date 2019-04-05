@@ -5,11 +5,10 @@ namespace CoreApparelStoreUserPortal.Models
 {
     public partial class Feedbacks
     {
-        public int ProductId { get; set; }
-        public int OrderId { get; set; }
+        public int CustomerId { get; set; }
         public string Message { get; set; }
+        public int FeedbackId { get; set; }
 
-        public Orders Order { get; set; }
-        public Products Product { get; set; }
+        public Customers Customer { get; set; }
     }
 }
