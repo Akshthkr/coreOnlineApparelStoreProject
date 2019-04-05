@@ -79,7 +79,7 @@ namespace CoreApparelStoreUserPortal.Controllers
             List<Orders> a = context.Orders.Where(x => x.CustomerId == c.CustomerId).ToList();
             ViewBag.a = a;
            
-            return View();
+            return View(); 
 
 
         }
