@@ -71,7 +71,7 @@ namespace CoreApparelStoreUserPortal.Controllers
             int a = c.CustomerId;
             ViewBag.id = a;
             return View(c);
-
+            -
         }
         public IActionResult CustomerHistory()
         {
