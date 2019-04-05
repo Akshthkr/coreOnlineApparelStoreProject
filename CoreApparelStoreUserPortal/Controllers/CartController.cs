@@ -141,9 +141,7 @@ namespace CoreApparelStoreUserPortal.Controllers
         {
             var c = context.Customers.Where(x => x.CustomerEmail == customers.CustomerEmail).SingleOrDefault();
             //context.Customers.Add(customers);
-
-
-
+            
             c.CustomerFirstName = customers.CustomerFirstName;
             c.CustomerLastName = customers.CustomerLastName;
             c.CustomerUserName = customers.CustomerUserName;
@@ -160,14 +158,9 @@ namespace CoreApparelStoreUserPortal.Controllers
             c.CustomerState2 = customers.CustomerState2;
             c.CustomerZipNumber2 = customers.CustomerZipNumber2;
             c.SameAddress = customers.SameAddress;
-
-        
-
-
-
-
-        //context.Entry(c).CurrentValues.SetValues(customers);
-        context.SaveChanges();
+            
+            context.SaveChanges();
+            SessionHelper.SetObjectAsJson(HttpContext.Session, "cus", c);
             var amount = TempData["total"];
             Orders orders = new Orders()
             {

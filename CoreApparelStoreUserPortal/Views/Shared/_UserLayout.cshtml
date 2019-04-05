@@ -50,9 +50,10 @@
                         <button class="nav-link dropdown-toggle" class="btn btn-secondary" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Context.Session.GetString("name")</button>
                         <div class="dropdown-menu" aria-labelledby="dropdown02">
                             <a class="dropdown-item" asp-action="userprofile" asp-controller="Home">View Profile</a>
-                           
+
                             <a class="dropdown-item" asp-action="CustomerHistory" asp-controller="Home">View Order History</a>
                             <a class="dropdown-item" asp-action="changepassword" asp-controller="Home">Change Password</a>
+                            <a class="dropdown-item" asp-action="Feedback" asp-controller="Home">FeedBack</a>
                             <a class="dropdown-item" asp-action="logout" asp-controller="Home">Logout</a>
                             @*<a class="dropdown-item" href="#">Something else here</a>*@
                         </div>

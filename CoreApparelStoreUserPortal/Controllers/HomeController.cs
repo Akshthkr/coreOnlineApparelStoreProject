@@ -71,7 +71,7 @@ namespace CoreApparelStoreUserPortal.Controllers
             int a = c.CustomerId;
             ViewBag.id = a;
             return View(c);
-            -
+            
         }
         public IActionResult CustomerHistory()
         {
@@ -152,6 +152,7 @@ namespace CoreApparelStoreUserPortal.Controllers
             c.CustomerPhoneNumber2 = customers.CustomerPhoneNumber2;
             c.SameAddress = customers.SameAddress;
             context.SaveChanges();
+           SessionHelper.SetObjectAsJson(HttpContext.Session, "cus",c);
             return RedirectToAction("userprofile","home",new { @id = customers.CustomerEmail });
 
         }
@@ -175,5 +176,25 @@ namespace CoreApparelStoreUserPortal.Controllers
            
             return RedirectToAction("index");
         }
+        public IActionResult Feedback()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Feedback(Feedbacks feedBacks)
+        {
+            Customers c = SessionHelper.GetObectFromJson<Customers>(HttpContext.Session, "cus");
+            feedBacks.CustomerId = c.CustomerId;
+            feedBacks.Message = feedBacks.Message;
+            context.Feedbacks.Add(feedBacks);
+            context.SaveChanges();
+            return RedirectToAction("UserProfile", "Cart");
+        }
+
+
+
+
     }
+
 }
