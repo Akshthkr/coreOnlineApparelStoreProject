@@ -9,7 +9,7 @@
     <tr>
         <th>ProductId</th>
         <th>ProductName</th>
-        <th>Quantity</th>
+        @*<th>Quantity</th>*@
         <th>Action</th>
     </tr>
 
@@ -18,7 +18,7 @@
         <tr>
             <td>@item.ProductId</td>
             <td>@item.ProductName</td>
-            <td>   </td>
+            @*<td>   </td>*@
             <td><a asp-controller="home" asp-action="Details" class="btn btn-info" asp-route-id="@item.ProductId">ProductDetails</a></td>
         </tr>
     }

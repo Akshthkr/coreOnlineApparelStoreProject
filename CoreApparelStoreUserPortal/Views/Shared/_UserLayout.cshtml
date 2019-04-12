@@ -40,7 +40,7 @@
                 <a class="btn btn-secondary my-2 my-sm-0" asp-action="Index" asp-controller="Cart">Cart @Context.Session.GetString("cartitem")</a>
 
                 &nbsp;
-                @if (@Context.Session.GetString("Logout") == null)
+                @if (@Context.Session.GetString("name") == null)
                 {<a href="" class="btn btn-success" data-toggle="modal" data-target="#modalLRForm">Login</a>
                 }
                 else
@@ -66,7 +66,7 @@
     <main role="main" class="container">
 
         <div class="starter-template">
-            <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog cascading-modal" role="document">
                     <!--Content-->
                     <div class="modal-content">

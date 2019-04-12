@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using coreOnlineApparelStoreAdminPortal.Models;
 
 namespace coreOnlineApparelStoreAdminPortal.Migrations
 {
     [DbContext(typeof(DbContextClass))]
-    partial class DbContextClassModelSnapshot : ModelSnapshot
+    [Migration("20190409041519_data")]
+    partial class data
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,10 +61,7 @@ namespace coreOnlineApparelStoreAdminPortal.Migrations
                     b.Property<string>("BrandDescription");
 
                     b.Property<string>("BrandName")
-                        .IsRequired()
-                        .HasColumnName("BrandName")
-                        .HasMaxLength(15)
-                        .IsUnicode(false);
+                        .IsRequired();
 
                     b.HasKey("BrandId");
 
@@ -100,7 +99,7 @@ namespace coreOnlineApparelStoreAdminPortal.Migrations
                     b.Property<string>("CategoryName")
                         .IsRequired()
                         .HasColumnName("categoryName")
-                        .HasMaxLength(15)
+                        .HasMaxLength(10)
                         .IsUnicode(false);
 
                     b.HasKey("CategoryId");
@@ -124,10 +123,7 @@ namespace coreOnlineApparelStoreAdminPortal.Migrations
 
                     b.Property<string>("CustomerEmail");
 
-                    b.Property<string>("CustomerFirstName")
-                        .HasColumnName("CustomerFirstName")
-                        .HasMaxLength(15)
-                        .IsUnicode(false);
+                    b.Property<string>("CustomerFirstName");
 
                     b.Property<string>("CustomerGender");
 

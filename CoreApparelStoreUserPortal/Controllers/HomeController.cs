@@ -60,7 +60,7 @@ namespace CoreApparelStoreUserPortal.Controllers
 
             SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", null);
             SessionHelper.SetObjectAsJson(HttpContext.Session, "cus", null);
-            HttpContext.Session.Remove("Logout");
+            HttpContext.Session.Remove("name");
 
             return RedirectToAction("index");
 
@@ -87,9 +87,14 @@ namespace CoreApparelStoreUserPortal.Controllers
         {
             List<OrderProducts> op = new List<OrderProducts>();
             List<Products> products = new List<Products>();
+
             op = context.OrderProducts.Where(x => x.OrderId == id).ToList();
             foreach(var item in op)
             {
+                //var query = from ops in OrderProducts
+                //            join p in products on ops.ProductId equals p.ProductId into gj
+                //            from subpet in gj.DefaultIfEmpty()
+                //            select new { person.FirstName, PetName = subpet?.Name ?? String.Empty };
                 Products c = context.Products.Where(x => x.ProductId == item.Productid).SingleOrDefault();
                 products.Add(c);
             }
@@ -171,6 +176,7 @@ namespace CoreApparelStoreUserPortal.Controllers
                 Customers cus = context.Customers.Where(x => x.CustomerEmail == c.CustomerEmail).SingleOrDefault();
                 cus.CustomerPassword = newpassword;
                 context.SaveChanges();
+                return RedirectToAction("logout");
 
             }
            

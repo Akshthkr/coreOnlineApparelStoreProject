@@ -10,7 +10,6 @@ namespace CoreApparelStoreUserPortal.Models
             Feedbacks = new HashSet<Feedbacks>();
             Orders = new HashSet<Orders>();
         }
-
         public int CustomerId { get; set; }
         public string CustomerFirstName { get; set; }
         public string CustomerLastName { get; set; }
@@ -29,7 +28,6 @@ namespace CoreApparelStoreUserPortal.Models
         public long CustomerPhoneNumber2 { get; set; }
         public string CustomerState2 { get; set; }
         public string CustomerZipNumber2 { get; set; }
-
         public Carts Carts { get; set; }
         public ICollection<Feedbacks> Feedbacks { get; set; }
         public ICollection<Orders> Orders { get; set; }

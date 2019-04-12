@@ -37,6 +37,27 @@ namespace coreOnlineApparelStoreAdminPortal.Models
             {
                 Build.HasKey(t => new { t.CustomerId, t.ProductId });
             });
+
+            modelBuilder.Entity<Category>(entity =>
+            {
+                entity.Property(e => e.CategoryName)
+                .HasColumnName("categoryName").HasMaxLength(15).IsUnicode(false);
+            });
+            modelBuilder.Entity<Brand>(entity =>
+            {
+                entity.Property(e => e.BrandName)
+                .HasColumnName("BrandName").HasMaxLength(15).IsUnicode(false);
+            });
+            modelBuilder.Entity<Vendor>(entity =>
+            {
+                entity.Property(e => e.VendorName)
+                .HasColumnName("VendorName").HasMaxLength(15).IsUnicode(false);
+            });
+            //modelBuilder.Entity<Customer>(entity =>
+            //{
+            //    entity.Property(e => e.CustomerFirstName)
+            //    .HasColumnName("CustomerFirstName").HasMaxLength(15).IsUnicode(false);
+            //});
         }
     }
 }
