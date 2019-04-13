@@ -14,6 +14,29 @@ namespace CoreApparelStoreUserPortal.Controllers
     {
         MainApparelDbContext context = new MainApparelDbContext();
 
+        void forlogin(int id)
+        {
+            if ((SessionHelper.GetObectFromJson<List<Item>>(HttpContext.Session, "cart") == null))
+            {
+                List<Item> cart = new List<Item>();
+                cart.Add(new Item { Products = context.Products.Find(id), Quantity = 1 });
+                SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
+            }
+            else
+            {
+                List<Item> cart = SessionHelper.GetObectFromJson<List<Item>>(HttpContext.Session, "cart");
+                int index = isExist(id);
+                if (index != -1)
+                {
+                    cart[index].Quantity++;
+                }
+                else
+                {
+                    cart.Add(new Item { Products = context.Products.Find(id), Quantity = 1 });
+                }
+                SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
+            }
+        }
         [Route("index")]
         public IActionResult Index()
         {
@@ -43,10 +66,12 @@ namespace CoreApparelStoreUserPortal.Controllers
             }
             return View("Backhome");
         }
+
         [Route("buy{id}")]
         public IActionResult Buy(int id)
-          {
-            
+           {
+            Customers cus = SessionHelper.GetObectFromJson<Customers>(HttpContext.Session, "cus");
+            Carts c = new Carts();
             if (SessionHelper.GetObectFromJson<List<Item>>(HttpContext.Session, "cart") == null)
             {
                 List<Item> cart = new List<Item>();
@@ -57,15 +82,19 @@ namespace CoreApparelStoreUserPortal.Controllers
                 });
                 if (HttpContext.Session.GetString("name") != null)
                 {
-                    Carts c = new Carts();
+                    
                     c.ProductId = id;
                     c.Quantity = 1;
-                    Customers cus = SessionHelper.GetObectFromJson<Customers>(HttpContext.Session, "cus");
                     c.CustomerId = cus.CustomerId;
+                    SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
                     context.Carts.Add(c);
                     context.SaveChanges();
                 }
-                SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
+                else
+                {
+                    SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
+                    
+                }
             }
             else
             {
@@ -85,19 +114,27 @@ namespace CoreApparelStoreUserPortal.Controllers
                     });
                     if (HttpContext.Session.GetString("name") != null)
                     {
-                        Carts c = new Carts();
+                       
                         c.ProductId = id;
                         c.Quantity = 1;
-                        Customers cus = SessionHelper.GetObectFromJson<Customers>(HttpContext.Session, "cus");
                         c.CustomerId = cus.CustomerId;
+
+                        SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
                         context.Carts.Add(c);
                         context.SaveChanges();
                     }
+                    else
+                    {
+                        SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
+
+                    }
                 }
-                SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
+              
+              
+
             }
-           
             return RedirectToAction("Index","Home");
+
             }
 
         
@@ -241,56 +278,70 @@ namespace CoreApparelStoreUserPortal.Controllers
                 var cus = context.Customers.Where(x => x.CustomerEmail == username).SingleOrDefault();
                 if (cus != null && password.Equals(cus.CustomerPassword))
                 {
-
-                    SessionHelper.SetObjectAsJson(HttpContext.Session, "cus", cus);
-                    HttpContext.Session.SetString("cusid", cus.CustomerId.ToString());
-                    HttpContext.Session.SetString("name", cus.CustomerFirstName + " " + cus.CustomerLastName);
-
-                    SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", null);
-                    
-                    HttpContext.Session.Remove("cartitem");
-
-
                     List<Carts> crt = context.Carts.ToList();
-
-                    foreach(var item in crt)
+                    HttpContext.Session.SetString("Addcartlogin", "loggind cart");
+                    foreach (var item in crt)
                     {
                         if (item.CustomerId == cus.CustomerId)
                         {
 
 
-                            int id = item.ProductId;
-                            if (SessionHelper.GetObectFromJson<List<Item>>(HttpContext.Session, "cart") == null)
-                            {
-                                List<Item> cart = new List<Item>();
-                                cart.Add(new Item
-                                {
-                                    Products = context.Products.Find(id),
-                                    Quantity = 1
-                                });
-                                SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
-                            }
-                            else
-                            {
-                                List<Item> cart = SessionHelper.GetObectFromJson<List<Item>>(HttpContext.Session, "cart");
-                                int index = isExist(id);
-                                if (index != -1)
-                                {
-                                    cart[index].Quantity++;
-                                }
-                                else
-                                {
-                                    cart.Add(new Item
-                                    {
-                                        Products = context.Products.Find(id),
-                                        Quantity = 1
-                                    });
-                                }
-                                SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
-                            }
+                            forlogin(item.ProductId);
                         }
                     }
 
+
+                    SessionHelper.SetObjectAsJson(HttpContext.Session, "cus", cus);
+
+                    HttpContext.Session.Remove("Addcartlogin");
+
+
+
+                    HttpContext.Session.SetString("name", cus.CustomerFirstName + " " + cus.CustomerLastName);
+
+                    //List<Carts> crt = context.Carts.ToList();
+                    //List<int> pid = new List<int>();
+                    //foreach(var item in crt)
+                    //{
+                    //    if (item.CustomerId == cus.CustomerId)
+                    //    {
+                    //        pid.Add(item.ProductId);
+
+                            
+                    //    }
+                    //}
+                    //foreach(int id1 in pid)
+                    //{
+                    //    int id = id1;
+                    //    if (SessionHelper.GetObectFromJson<List<Item>>(HttpContext.Session, "cart") == null)
+                    //    {
+                    //        List<Item> cart = new List<Item>();
+                    //        cart.Add(new Item
+                    //        {
+                    //            Products = context.Products.Find(id),
+                    //            Quantity = 1
+                    //        });
+                    //        SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
+                    //    }
+                    //    else
+                    //    {
+                    //        List<Item> cart = SessionHelper.GetObectFromJson<List<Item>>(HttpContext.Session, "cart");
+                    //        int index = isExist(id);
+                    //        if (index != -1)
+                    //        {
+                    //            cart[index].Quantity++;
+                    //        }
+                    //        else
+                    //        {
+                    //            cart.Add(new Item
+                    //            {
+                    //                Products = context.Products.Find(id),
+                    //                Quantity = 1
+                    //            });
+                    //        }
+                    //        SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
+                    //    }
+                    //}
 
 
                     return RedirectToAction("index", "home");
@@ -323,15 +374,8 @@ namespace CoreApparelStoreUserPortal.Controllers
 
                     SessionHelper.SetObjectAsJson(HttpContext.Session, "cus", cus);
                     
-
-                    HttpContext.Session.SetString("cusid", cus.CustomerId.ToString());
-                    HttpContext.Session.SetString("name", cus.CustomerFirstName + " " + cus.CustomerLastName);
-
                     
-
-
-
-                    HttpContext.Session.Remove("cartitem");
+                    HttpContext.Session.SetString("name", cus.CustomerFirstName + " " + cus.CustomerLastName);
 
                     List<Carts> crt = context.Carts.Where(x => x.CustomerId == cus.CustomerId).ToList();
                     foreach(var item in crt)
@@ -400,10 +444,8 @@ namespace CoreApparelStoreUserPortal.Controllers
                         context.SaveChanges();
                     Customers cus1 = context.Customers.Where(x => x.CustomerEmail == username).SingleOrDefault();
                     SessionHelper.SetObjectAsJson(HttpContext.Session, "cus", cus1);
-
-                    HttpContext.Session.Remove("cartitem");
+                    
                     HttpContext.Session.SetString("name", c.CustomerFirstName + " " + c.CustomerLastName);
-                    HttpContext.Session.SetString("cusid", cus1.CustomerId.ToString());
                     
                     if (SessionHelper.GetObectFromJson<List<Item>>(HttpContext.Session, "cart") != null)
                     {
@@ -461,10 +503,18 @@ namespace CoreApparelStoreUserPortal.Controllers
                     Customers cus1 = context.Customers.Where(x => x.CustomerEmail == username).SingleOrDefault();
                     SessionHelper.SetObjectAsJson(HttpContext.Session, "cus", cus1);
                     
-                    HttpContext.Session.Remove("cartitem");
                     HttpContext.Session.SetString("name", c.CustomerFirstName + " " + c.CustomerLastName);
-                    HttpContext.Session.SetString("cusid", cus1.CustomerId.ToString());
+
                    var cart = SessionHelper.GetObectFromJson<List<Item>>(HttpContext.Session, "cart");
+                    var crt = context.Carts.ToList();
+                    foreach(var item1 in crt)
+                    {
+                        if(item1.CustomerId==cus1.CustomerId)
+                        {
+                            context.Carts.Remove(item1);
+                            context.SaveChanges();
+                        }
+                    }
                     foreach (var item in cart)
                     {
                         Carts c1 = new Carts();

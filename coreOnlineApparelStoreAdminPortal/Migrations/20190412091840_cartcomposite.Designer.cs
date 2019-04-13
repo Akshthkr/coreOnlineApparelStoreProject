@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using coreOnlineApparelStoreAdminPortal.Models;
 
 namespace coreOnlineApparelStoreAdminPortal.Migrations
 {
     [DbContext(typeof(DbContextClass))]
-    partial class DbContextClassModelSnapshot : ModelSnapshot
+    [Migration("20190412091840_cartcomposite")]
+    partial class cartcomposite
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,7 +61,10 @@ namespace coreOnlineApparelStoreAdminPortal.Migrations
                     b.Property<string>("BrandDescription");
 
                     b.Property<string>("BrandName")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasColumnName("BrandName")
+                        .HasMaxLength(15)
+                        .IsUnicode(false);
 
                     b.HasKey("BrandId");
 
@@ -68,19 +73,15 @@ namespace coreOnlineApparelStoreAdminPortal.Migrations
 
             modelBuilder.Entity("coreOnlineApparelStoreAdminPortal.Models.Cart", b =>
                 {
-                    b.Property<int>("CartId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
                     b.Property<int>("CustomerId");
-
-                    b.Property<DateTime>("ItemCreated");
 
                     b.Property<int>("ProductId");
 
+                    b.Property<DateTime>("ItemCreated");
+
                     b.Property<int>("Quantity");
 
-                    b.HasKey("CartId");
+                    b.HasKey("CustomerId", "ProductId");
 
                     b.HasIndex("CustomerId")
                         .IsUnique();
@@ -99,7 +100,10 @@ namespace coreOnlineApparelStoreAdminPortal.Migrations
                     b.Property<string>("CategoryDescription");
 
                     b.Property<string>("CategoryName")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasColumnName("categoryName")
+                        .HasMaxLength(15)
+                        .IsUnicode(false);
 
                     b.HasKey("CategoryId");
 
@@ -249,7 +253,10 @@ namespace coreOnlineApparelStoreAdminPortal.Migrations
                         .IsRequired();
 
                     b.Property<string>("VendorName")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasColumnName("VendorName")
+                        .HasMaxLength(15)
+                        .IsUnicode(false);
 
                     b.Property<long>("VendorPhoneNo");
 
