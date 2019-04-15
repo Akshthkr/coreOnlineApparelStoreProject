@@ -12,7 +12,11 @@ namespace CoreApparelStoreUserPortal.Controllers
     [Route("cart")]
     public class CartController : Controller
     {
-        MainApparelDbContext context = new MainApparelDbContext();
+        MainApparelDbContext context;
+        public CartController(MainApparelDbContext _context)
+        {
+            context = _context;
+        }
 
         void forlogin(int id)
         {
@@ -69,7 +73,7 @@ namespace CoreApparelStoreUserPortal.Controllers
 
         [Route("buy{id}")]
         public IActionResult Buy(int id)
-           {
+            {
             Customers cus = SessionHelper.GetObectFromJson<Customers>(HttpContext.Session, "cus");
             Carts c = new Carts();
             if (SessionHelper.GetObectFromJson<List<Item>>(HttpContext.Session, "cart") == null)
@@ -278,17 +282,17 @@ namespace CoreApparelStoreUserPortal.Controllers
                 var cus = context.Customers.Where(x => x.CustomerEmail == username).SingleOrDefault();
                 if (cus != null && password.Equals(cus.CustomerPassword))
                 {
-                    List<Carts> crt = context.Carts.ToList();
-                    HttpContext.Session.SetString("Addcartlogin", "loggind cart");
-                    foreach (var item in crt)
-                    {
-                        if (item.CustomerId == cus.CustomerId)
-                        {
+                    //List<Carts> crt = context.Carts.ToList();
+                    //HttpContext.Session.SetString("Addcartlogin", "loggind cart");
+                    //foreach (var item in crt)
+                    //{
+                    //    if (item.CustomerId == cus.CustomerId)
+                    //    {
 
 
-                            forlogin(item.ProductId);
-                        }
-                    }
+                    //        forlogin(item.ProductId);
+                    //    }
+                    //}
 
 
                     SessionHelper.SetObjectAsJson(HttpContext.Session, "cus", cus);

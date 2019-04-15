@@ -168,6 +168,37 @@ namespace coreOnlineApparelStoreAdminPortal.Migrations
                     b.ToTable("Feedbacks");
                 });
 
+            modelBuilder.Entity("coreOnlineApparelStoreAdminPortal.Models.Manager", b =>
+                {
+                    b.Property<int>("ManagerId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ManagerAddress");
+
+                    b.Property<string>("ManagerCountry");
+
+                    b.Property<string>("ManagerEmail");
+
+                    b.Property<string>("ManagerFirstName");
+
+                    b.Property<string>("ManagerGender");
+
+                    b.Property<string>("ManagerLastName");
+
+                    b.Property<string>("ManagerPassword");
+
+                    b.Property<long>("ManagerPhoneNumber");
+
+                    b.Property<string>("ManagerState");
+
+                    b.Property<string>("ManagerZipNumber");
+
+                    b.HasKey("ManagerId");
+
+                    b.ToTable("Managers");
+                });
+
             modelBuilder.Entity("coreOnlineApparelStoreAdminPortal.Models.Order", b =>
                 {
                     b.Property<int>("OrderId")

@@ -1,0 +1,138 @@
+﻿@model IEnumerable<coreApparelManagerPortal.Models.Customers>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerPhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCountry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerZipNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerAddress1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerAddress2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SameAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCountry2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerPhoneNumber2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerState2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerZipNumber2)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerPhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerZipNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerAddress1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerAddress2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SameAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCountry2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerPhoneNumber2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerState2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerZipNumber2)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

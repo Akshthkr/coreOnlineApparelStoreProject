@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "coreOnlineApparelStoreAdmin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreApparelStoreUserPortal", "CoreApparelStoreUserPortal\CoreApparelStoreUserPortal.csproj", "{4D195E41-A006-4091-9A5E-B97D45800A8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreApparelUserPortalTesting", "CoreApparelUserPortalTesting\CoreApparelUserPortalTesting.csproj", "{A87A8773-07B4-460B-9B7E-4AC436204BEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "coreApparelManagerPortal", "coreApparelManagerPortal\coreApparelManagerPortal.csproj", "{F4C9C206-7878-4DB4-8760-121C3ABDBD55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{4D195E41-A006-4091-9A5E-B97D45800A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D195E41-A006-4091-9A5E-B97D45800A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D195E41-A006-4091-9A5E-B97D45800A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A87A8773-07B4-460B-9B7E-4AC436204BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A87A8773-07B4-460B-9B7E-4AC436204BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A87A8773-07B4-460B-9B7E-4AC436204BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A87A8773-07B4-460B-9B7E-4AC436204BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C9C206-7878-4DB4-8760-121C3ABDBD55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C9C206-7878-4DB4-8760-121C3ABDBD55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C9C206-7878-4DB4-8760-121C3ABDBD55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C9C206-7878-4DB4-8760-121C3ABDBD55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

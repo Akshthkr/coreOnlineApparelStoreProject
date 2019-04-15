@@ -1,0 +1,37 @@
+﻿@model coreApparelManagerPortal.Models.Feedbacks
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Feedbacks</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FeedbackId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FeedbackId)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

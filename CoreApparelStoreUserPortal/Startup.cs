@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using CoreApparelStoreUserPortal.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using CoreApparelStoreUserPortal.Models;
 
 namespace CoreApparelStoreUserPortal
 {
@@ -34,11 +35,9 @@ namespace CoreApparelStoreUserPortal
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<MainApparelDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("DefaultStrings")));
             services.AddDefaultIdentity<IdentityUser>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<MainApparelDbContext>();
             services.AddSession();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

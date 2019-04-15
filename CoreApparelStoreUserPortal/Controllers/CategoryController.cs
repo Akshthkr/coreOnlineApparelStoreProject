@@ -9,7 +9,11 @@ namespace CoreApparelStoreUserPortal.Controllers
 {
     public class CategoryController : Controller
     {
-        MainApparelDbContext context = new MainApparelDbContext();
+        MainApparelDbContext context;
+        public CategoryController(MainApparelDbContext _context)
+        {
+            context = _context;
+        }
         public IActionResult Index()
         {
 
